@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK Negeri 1 Klaten</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="logosekolah.png" alt="Logo SMK N 1 Klaten" class="logo-img">
+            <div class="brand-text">
+                <div class="brand-title">SMK NEGERI 1 KLATEN</div>
+                <div class="brand-tagline">Unggul, Berkarya, Berkarakter & Berdaya Saing</div>
+            </div>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="informasi.html">Informasi kegiatan</a></li>
+            <li><a href="galery.html">Galery</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+            <li>
+                <div class="search-box">
+                    <input type="text" placeholder="Cari...">
+                    <span class="search-icon">&#128065;</span>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Cari...">
+  <span class="search-icon" id="searchBtn" style="cursor: pointer;">&#128269;</span>
+</div>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="beranda">
+        <div class="slide active" style="background-image: url(imageberanda/fotosekolah1.jpeg);"></div>
+        <div class="slide" style="background-image: url(imageberanda/fotosekolah2.jpeg);"></div>
+        <!-- Kurung tutup url(...) sudah diperbaiki di bawah ini -->
+        <div class="slide" style="background-image: url(imageberanda/fotosekolah3.jpeg);"></div>
+
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="logosekolah.png" alt="Logo Utama" class="center-logo">
+            <div class="welcome-text">Selamat Datang di</div>
+            <h1 class="main-title">SMK NEGERI 1 KLATEN</h1>
+            <div class="motto">Unggul, Berkarya, Berkarakter & Berdaya Saing</div>
+            <p class="description">
+                Mencetak lulusan yang kompeten, berkarakter, dan siap menghadapi dunia kerja, dunia usaha, serta pendidikan tinggi melalui pembelajaran yang inovatif dan berkualitas.
+            </p>
+        </div>
+
+        <div class="dots-container">
+            <span class="dot active" onclick="setSlide(0)"></span>
+            <span class="dot" onclick="setSlide(1)"></span>
+            <span class="dot" onclick="setSlide(2)"></span>
+        </div>
+    </section>
+
+    <!-- SECTION KARTU STATISTIK -->
+    <div class="stats-container">
+        <div class="stats-grid">
+            
+            <div class="stat-card">
+                <img src="imageberanda/statistik1.png" alt="Siswa" class="card-custom-icon">
+                <div class="stat-number">1.700+</div>
+                <div class="stat-label">Siswa</div>
+            </div>
+
+            <div class="stat-card">
+                <img src="imageberanda/statistik2.png" alt="Guru" class="card-custom-icon">
+                <div class="stat-number">99+</div>
+                <div class="stat-label">Guru & Karyawan</div>
+            </div>
+
+            <div class="stat-card">
+                <img src="imageberanda/statistik3.png" alt="Program Keahlian" class="card-custom-icon">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Program Keahlian</div>
+            </div>
+
+            <div class="stat-card">
+                <img src="imageberanda/statistik4.png" alt="Prestasi" class="card-custom-icon">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Prestasi</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- GARIS PEMBATAS -->
+    <div class="divider-container">
+        <hr class="section-divider">
+    </div>
+
+    <!-- TENTANG KAMI -->
+    <section class="about-section">
+        <h2 class="about-title">Tentang Kami</h2>
+
+        <div class="about-container">
+            <!-- Kolom Kiri: Foto Gedung -->
+            <div class="about-image-wrapper">
+                <img src="imageberanda/fotosekolah2.jpeg" alt="Gedung Sekolah" class="about-image">
+            </div>
+
+            <!-- Kolom Kanan: Deskripsi Teks -->
+            <div class="about-content">
+                <p class="about-text">
+                    SMK Negeri 1 Klaten merupakan sekolah menengah kejuruan yang berkomitmen menyelenggarakan pendidikan vokasi berkualitas untuk mencetak lulusan yang kompeten, berkarakter, dan siap menghadapi tantangan dunia kerja maupun melanjutkan pendidikan ke jenjang yang lebih tinggi. Dengan dukungan tenaga pendidik profesional, fasilitas pembelajaran yang memadai, serta kerja sama dengan berbagai mitra industri, sekolah terus berupaya meningkatkan mutu pendidikan sesuai perkembangan ilmu pengetahuan dan teknologi.
+                </p>
+                <a href="profil.html" class="about-readmore">Baca Selengkapnya</a>
+            </div>
+        </div>
+    </section>
+
+<!-- SECTION KEUNGGULAN SEKOLAH -->
+<section class="advantages-section">
+    <div class="advantages-container">
+        
+        <!-- KOLOM KIRI: TEKS & 4 KOTAK PUTIH -->
+        <div class="advantages-left">
+            <h2 class="advantages-title">Beberapa Keunggulan Pada Sekolah Kami</h2>
+            <p class="advantages-desc">
+                kami berkomitmen untuk mencetak generasi cerdas, berkarakter, dan siap menghadapi tantangan masa depan
+            </p>
+
+            <div class="advantages-grid">
+                <div class="adv-card">
+                    <img src="imageberanda/smk.png" alt="SMK Pusat Keunggulan" class="adv-icon">
+                    <span>SMK Pusat Keunggulan</span>
+                </div>
+                <div class="adv-card">
+                    <img src="imageberanda/jurusan beragam.png" alt="Jurusan Beragam" class="adv-icon">
+                    <span>Jurusan Beragam</span>
+                </div>
+                <div class="adv-card">
+                    <img src="imageberanda/fasilitas sekolah.png" alt="Fasilitas Lengkap" class="adv-icon">
+                    <span>Fasilitas Lengkap</span>
+                </div>
+                <div class="adv-card">
+                    <img src="imageberanda/berprestasi.png" alt="Berprestasi" class="adv-icon">
+                    <span>Berprestasi</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- KOLOM KANAN: 3 KARTU GAMBAR GALERI -->
+        <div class="advantages-right">
+            <div class="adv-img-top">
+                <img src="imageberanda/sekolah1.png" alt="Foto Keunggulan 1">
+            </div>
+            <div class="adv-img-bottom">
+                <div class="adv-img-small">
+                    <img src="imageberanda/sekolah2.png" alt="Foto Keunggulan 2">
+                </div>
+                <div class="adv-img-small">
+                    <img src="imageberanda/sekolah3.png" alt="Foto Keunggulan 3">
+                </div>
+            </div>
+        </div>
+    <!-- POP UP MODAL CONTAINER -->
+<div id="popupModal" class="popup-modal">
+    <div class="popup-box">
+        <span class="popup-close">&times;</span>
+        <div id="popupBody"></div>
+    </div>
+</div>
+</section>
+
+  <!-- SECTION BERITA DI BERANDA -->
+<section class="beranda-info-section">
+  
+  <!-- Header Judul -->
+  <div class="beranda-info-header">
+    <span class="sub-title-orange">B E R I T A</span>
+    <h2 class="main-title-blue">Informasi Kegiatan Terbaru</h2>
+    <div class="header-line-blue"></div>
+  </div>
+
+  <!-- Grid 3 Kartu Berita -->
+  <div class="news-grid-center">
+    
+    <!-- KARTU 1 -->
+    <div class="news-card-custom">
+      <div class="news-img-holder">
+        <img src="imageprofil/hari jadi klaten.jpeg" alt="Sampul Berita 1">
+      </div>
+      <div class="news-body">
+        <div class="news-badge-date">
+          28 Juli 2026
+        </div>
+        <h3 class="news-card-title">Peringatan Hari Jadi Klaten Ke-222</h3>
+        <p class="news-card-desc">Seluruh warga sekolah melaksanakan Upacara Peringatan Hari Jadi Klaten</p>
+        <a href="informasi.html" class="btn-navy">Selengkapnya</a>
+      </div>
+    </div>
+
+    <!-- KARTU 2 -->
+    <div class="news-card-custom">
+      <div class="news-img-holder">
+        <img src="gambar-berita.png" alt="Sampul Berita 2">
+      </div>
+      <div class="news-body">
+        <div class="news-badge-date">
+          📅 15 Agustus 2025
+        </div>
+        <h3 class="news-card-title">JUDUL BERITA</h3>
+        <p class="news-card-desc">Deskripsi.......</p>
+        <a href="informasi.html" class="btn-navy">Selengkapnya</a>
+      </div>
+    </div>
+
+    <!-- KARTU 3 -->
+    <div class="news-card-custom">
+      <div class="news-img-holder">
+        <img src="gambar-berita.png" alt="Sampul Berita 3">
+      </div>
+      <div class="news-body">
+        <div class="news-badge-date">
+          📅 15 Agustus 2025
+        </div>
+        <h3 class="news-card-title">JUDUL BERITA</h3>
+        <p class="news-card-desc">Deskripsi.......</p>
+        <a href="informasi.html" class="btn-navy">Selengkapnya</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Tombol Lihat Semua Berita -->
+  <div class="see-all-wrapper">
+    <a href="informasi.html" class="btn-see-all-navy">Lihat Semua Berita</a>
+  </div>
+</section>
+
+<!-- SECTION GALERI KEGIATAN BERANDA -->
+<section class="gallery-section-beranda">
+    <div class="gallery-header-beranda">
+        <h2 class="gallery-title-beranda">Galeri Kegiatan</h2>
+        <div class="gallery-line-beranda"></div>
+        <p class="gallery-desc-beranda">Momen berharga para murid guru dan staf karyawan</p>
+    </div>
+
+    <!-- CONTAINER SLIDER FULL LAYAR -->
+    <div class="slider-wrapper-beranda">
+        <!-- Tombol Kiri -->
+        <button class="slider-btn prev-btn" id="prevBtnBeranda">&lsaquo;</button>
+
+        <!-- Area Slider Foto -->
+        <div class="gallery-slider-beranda" id="gallerySliderBeranda">
+            
+            <div class="gallery-card-beranda">
+                <img src="imageprofil/hut.jpeg" alt="Kegiatan 1">
+                <div class="gallery-overlay-beranda">
+                    <h3>Ulang tahun sekolah ke-64</h3>
+                </div>
+            </div>
+
+            <div class="gallery-card-beranda">
+                <img src="gambar2.jpg" alt="Kegiatan 2">
+                <div class="gallery-overlay-beranda">
+                    <h3>Lomba Peringatan 17 Agustus</h3>
+                </div>
+            </div>
+
+            <div class="gallery-card-beranda">
+                <img src="gambar3.jpg" alt="Kegiatan 3">
+                <div class="gallery-overlay-beranda">
+                    <h3>Praktik Kerja Industri</h3>
+                </div>
+            </div>
+
+            <div class="gallery-card-beranda">
+                <img src="imageprofil/pentas seni.jpeg" alt="Kegiatan 4">
+                <div class="gallery-overlay-beranda">
+                    <h3>Pentas Seni Sekolah</h3>
+                </div>
+            </div>
+
+            <div class="gallery-card-beranda">
+                <img src="imageprofil/upacara.png" alt="Kegiatan 5">
+                <div class="gallery-overlay-beranda">
+                    <h3>Upacara Rutin</h3>
+                </div>
+            </div>
+
+            <div class="gallery-card-beranda">
+                <img src="imageprofil/pramuka.jpeg" alt="Kegiatan 6">
+                <div class="gallery-overlay-beranda">
+                    <h3>Pramuka Ambalan</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Tombol Kanan -->
+        <button class="slider-btn next-btn" id="nextBtnBeranda">&rsaquo;</button>
+    </div>
+</section>
+
+<!-- SECTION CALL TO ACTION (CTA) -->
+<section class="cta-section">
+    <div class="cta-container">
+        <h2 class="cta-title">Siap Bergabung Bersama Kami?</h2>
+        <p class="cta-subtitle">Jadilah bagian dari keluarga besar SMK Negeri 1 Klaten dan raih masa depan cerahmu.</p>
+        
+        <!-- Tombol Link ke Halaman Kontak -->
+        <a href="kontak.html" class="cta-btn">Mulai sekarang</a>
+    </div>
+</section>
+
+<!-- FOOTER SECTION -->
+<footer class="footer-section">
+    <div class="footer-container">
+        
+        <!-- Kolom 1: Profil Singkat & Medsos -->
+        <div class="footer-col">
+            <div class="footer-brand">
+                <img src="logosekolah.png" alt="Logo SMK N 1 Klaten" class="footer-logo">
+                <h3>SMK NEGERI 1 KLATEN</h3>
+            </div>
+            <p class="footer-desc">
+                Mencetak lulusan yang unggul, berkarakter, dan berdaya saing global di bidang keahlian vokasi dan teknologi.
+            </p>
+        </div>
+
+        <!-- Kolom 2: Tautan Cepat -->
+        <div class="footer-col">
+            <h4>Tautan Cepat</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="profil.html">Profil Sekolah</a></li>
+                <li><a href="informasi.html"">Informasi Kegiatan</a></li>
+                <li><a href="galery.html">Galeri Foto</a></li>
+                <li><a href="kontak.html">Kontak Kami</a></li>
+            </ul>
+        </div>
+
+        <!-- Kolom 3: Kontak Resmi -->
+        <div class="footer-col" id="kontak">
+            <h4>Hubungi Kami</h4>
+            <ul class="contact-info">
+                <li>📍 Jl. dr. Wahidin Sudirohusodo No.22 Klaten 57432, Jawa Tengah, INDONESIA</li>
+                <li>📞  Telp. 0272-321266</li>
+                <li>✉️ info@smkn1klaten.sch.id</li>
+                <li>🕒 Senin - Jumat: 07.00 - 15.30 WIB</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Garis Bawah / Copyright -->
+    <div class="footer-bottom">
+        <p>&copy; 2026 SMK Negeri 1 Klaten. All Rights Reserved.</p>
+    </div>
+</footer>
