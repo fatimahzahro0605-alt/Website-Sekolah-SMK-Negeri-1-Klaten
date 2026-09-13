@@ -1754,13 +1754,16 @@ body {
 /* ==========================================
    1. GAYA DASAR / GLOBAL
    ========================================== */
+/* ==========================================
+   1. GAYA DASAR / GLOBAL
+   ========================================== */
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f7fc;
+  background-color: #f6f8fc;
   color: #0b2545;
   margin: 0;
   padding: 0;
@@ -1774,42 +1777,38 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #0b2545;
-  padding: 15px 5%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  height: 80px;
+  padding: 12px 5%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .logo-img {
-  width: 50px;
+  width: 45px;
   height: auto;
 }
 
 .brand-title {
   color: #ffffff;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 0.5px;
 }
 
 .brand-tagline {
   color: #9bb1c9;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
   margin: 0;
   padding: 0;
 }
@@ -1817,12 +1816,13 @@ body {
 .nav-menu a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   transition: color 0.3s;
 }
 
-.nav-menu a:hover {
+.nav-menu a:hover,
+.nav-menu a.active {
   color: #f4d35e;
 }
 
@@ -1833,62 +1833,63 @@ body {
 }
 
 .search-box input {
-  padding: 8px 35px 8px 14px;
-  border-radius: 20px;
+  padding: 6px 30px 6px 12px;
+  border-radius: 15px;
   border: 1px solid #9bb1c9;
   outline: none;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .search-icon {
   position: absolute;
-  right: 12px;
-  font-size: 13px;
+  right: 10px;
+  font-size: 12px;
   color: #666;
   cursor: pointer;
 }
 
 /* ==========================================
-   3. SECTION HUBUNGI KAMI (FULL 1 HALAMAN LAYAR)
+   3. SECTION MARI TERHUBUNG DENGAN KAMI
    ========================================== */
 .contact-section {
-  max-width: 1250px;
-  min-height: calc(100vh - 80px); /* Pas 1 layar monitor */
+  width: 90%;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 40px 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding-top: 55px;
+  padding-bottom: 60px;
   text-align: center;
 }
 
 .pill-badge {
   display: inline-block;
-  background: #dbe4ee;
+  background: linear-gradient(180deg, #e3e8f0 0%, #cbd5e1 100%);
   color: #0b2545;
-  padding: 8px 24px;
-  border-radius: 25px;
-  font-weight: bold;
-  font-size: 14px;
-  letter-spacing: 1.5px;
-  margin: 0 auto 10px;
+  padding: 10px 34px;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
 }
 
 .section-title {
-  font-size: 38px;
+  font-size: 42px;
   font-weight: 800;
   color: #0b2545;
-  margin: 10px 0 8px;
+  margin: 5px 0 12px;
 }
 
 .section-subtitle {
   color: #555;
   font-size: 16px;
-  margin-bottom: 35px;
+  line-height: 1.6;
+  margin-bottom: 45px;
 }
 
 .contact-wrapper {
-  display: flex;
+  display: flex !important;
+  flex-direction: row !important;
   gap: 30px;
   text-align: left;
   align-items: stretch;
@@ -1898,27 +1899,24 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 18px;
 }
 
 .info-card {
   background: #ffffff;
-  border-radius: 22px;
-  padding: 20px 25px;
+  border-radius: 35px;
+  padding: 22px 30px;
   display: flex;
   align-items: center;
-  gap: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  gap: 22px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
 }
 
 .info-card .icon-box {
-  font-size: 28px;
+  font-size: 32px;
   color: #0b2545;
-  width: 50px;
-  height: 50px;
-  background: #eef3f9;
-  border-radius: 50%;
+  width: 55px;
+  height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1927,7 +1925,7 @@ body {
 
 .info-text h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
   color: #0b2545;
   font-weight: 700;
 }
@@ -1935,94 +1933,109 @@ body {
 .info-text p {
   margin: 4px 0 0;
   font-size: 14px;
-  color: #444;
+  color: #555;
   line-height: 1.5;
 }
 
-/* Kartu Media Sosial */
 .social-card {
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 18px 25px;
+  padding: 20px 25px;
 }
 
 .social-card h3 {
   font-size: 16px;
-  margin-bottom: 12px;
+  margin-top: 0;
+  margin-bottom: 14px;
   color: #0b2545;
+  font-weight: 700;
 }
 
-.social-bar {
-  background: #0b2545;
-  padding: 10px 24px;
-  border-radius: 30px;
+.social-grid {
   display: flex;
-  gap: 20px;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
 }
 
-.soc-btn {
+.soc-box {
+  width: 65px;
+  height: 48px;
+  background-color: #0b2545;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 22px;
   text-decoration: none;
-  transition: transform 0.2s, color 0.2s;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.soc-btn:hover {
-  transform: scale(1.25);
-  color: #f4d35e;
+.soc-box:hover {
+  transform: translateY(-3px);
 }
 
-/* Kontainer Google Maps */
+.soc-box.yt i { color: #ff0000; }
+.soc-box.ig i { color: #e1306c; }
+.soc-box.tt i { color: #ffffff; }
+.soc-box.fb i { color: #1877f2; }
+.soc-box.tw i { color: #ffffff; }
+
 .map-container {
-  flex: 1.1;
+  flex: 1.05;
   background: #ffffff;
-  border-radius: 25px;
+  border-radius: 35px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
   min-height: 480px;
 }
 
 /* ==========================================
-   4. SECTION ASPIRASI (DILIHAT DENGAN SCROLL)
+   4. SECTION ASPIRASI
    ========================================== */
 .aspirasi-section {
-  max-width: 1250px;
-  min-height: 80vh;
-  margin: 40px auto 80px;
-  padding: 60px 25px 0;
+  width: 90%;
+  max-width: 1300px;
+  margin: 60px auto 100px;
+  padding-top: 40px;
   text-align: center;
 }
 
 .aspirasi-title {
-  font-size: 38px;
+  font-size: 40px;
   font-weight: 800;
-  letter-spacing: 12px;
+  letter-spacing: 14px;
   color: #0b2545;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
 .aspirasi-divider {
-  width: 85%;
-  height: 4px;
-  background-color: #9bb1c9;
-  margin: 0 auto 45px;
-  border-radius: 2px;
+  width: 92%;
+  height: 6px;
+  background-color: #94a3b8;
+  margin: 0 auto 50px;
+  border-radius: 3px;
 }
 
 .aspirasi-wrapper {
-  display: flex;
-  gap: 35px;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 30px;
   text-align: left;
+  align-items: stretch;
 }
 
 .aspirasi-card {
   flex: 1;
   background: #ffffff;
-  border-radius: 25px;
-  padding: 30px 35px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  border-radius: 35px;
+  padding: 35px 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
 }
 
 .input-group {
@@ -2031,8 +2044,8 @@ body {
 
 .input-group label {
   display: block;
-  font-weight: bold;
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 16px;
   color: #0b2545;
   margin-bottom: 8px;
 }
@@ -2040,42 +2053,42 @@ body {
 .input-group input, 
 .input-group textarea {
   width: 100%;
-  padding: 12px 16px;
-  border: 1.5px solid #0b2545;
-  border-radius: 14px;
+  padding: 14px 18px;
+  border: 2px solid #0b2545;
+  border-radius: 20px;
   font-family: inherit;
   outline: none;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .input-group input:focus,
 .input-group textarea:focus {
   border-color: #134074;
-  box-shadow: 0 0 6px rgba(11, 37, 69, 0.25);
+  box-shadow: 0 0 8px rgba(11, 37, 69, 0.2);
 }
 
 .btn-kirim {
   width: 100%;
   background: #0b2545;
-  color: white;
+  color: #ffffff;
   border: none;
-  padding: 14px;
-  border-radius: 14px;
-  font-size: 16px;
+  padding: 16px;
+  border-radius: 20px;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
   margin-top: 10px;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 
 .btn-kirim:hover {
   background: #134074;
 }
 
-/* Daftar Aspirasi Terbaru */
 .display-box h2 {
   font-size: 22px;
   color: #0b2545;
+  font-weight: 700;
   margin-top: 0;
   margin-bottom: 25px;
 }
@@ -2086,19 +2099,13 @@ body {
   padding-right: 12px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
 }
 
 .aspirasi-item {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding-bottom: 12px;
-  border-bottom: 1px dashed #e0e0e0;
-}
-
-.aspirasi-item:last-child {
-  border-bottom: none;
 }
 
 .user-info {
@@ -2108,7 +2115,7 @@ body {
 }
 
 .avatar {
-  font-size: 32px;
+  font-size: 36px;
   color: #0b2545;
 }
 
@@ -2125,27 +2132,30 @@ body {
 }
 
 .user-identity strong {
-  font-size: 15px;
+  font-size: 16px;
   color: #0b2545;
+  font-weight: 700;
 }
 
 .user-email {
   font-size: 12px;
-  color: #666;
+  color: #666666;
+  margin-top: 2px;
 }
 
 .user-meta .date {
   font-size: 12px;
-  color: #888;
+  color: #718096;
 }
 
 .bubble-pesan {
-  background: #eef3f9;
-  padding: 12px 16px;
-  border-radius: 14px;
+  background: #dcdfe4;
+  padding: 12px 22px;
+  border-radius: 25px;
   font-size: 14px;
-  color: #333;
+  color: #2d3748;
   line-height: 1.5;
+  width: 100%;
 }
 
 /* ==========================================
