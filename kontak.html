@@ -33,71 +33,112 @@
         </ul>
     </nav>
 
-   <section class="contact-section">
-  <div class="contact-container">
-    
-    <!-- Kartu Informasi Kontak -->
-    <div class="contact-info">
-      <h2>Hubungi Kami</h2>
+<!-- Font Awesome untuk Ikon Kontak & Media Sosial -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Bagian Hubungi Kami -->
+<section class="contact-section">
+  <div class="pill-badge">HUBUNGI KAMI</div>
+  <h1 class="section-title">Mari Terhubung Dengan Kami</h1>
+  <p class="section-subtitle">Punya pertanyaan atau ingin bekerjasama? Silakan hubungi kami melalui saluran di bawah ini.</p>
+
+  <div class="contact-wrapper">
+    <!-- Kolom Kiri: Kartu Informasi Kontak -->
+    <div class="contact-info-list">
       
-      <div class="info-item">
-        <strong>Alamat:</strong>
-        <p>Jl. Jend. Major Sungkono No. 55, Jonggrangan, Klaten Utara, Kab. Klaten, Jawa Tengah</p>
-      </div>
-
-      <div class="info-item">
-        <strong>Email:</strong>
-        <p>smkn1klaten@yahoo.com</p>
-      </div>
-
-      <div class="info-item">
-        <strong>Jam Kerja:</strong>
-        <p>Senin – Kamis: 07.00 – 15.30 WIB</p>
-        <p>Jumat: 07.00 – 13.30 WIB</p>
-        <p>Sabtu – Minggu: Libur</p>
-      </div>
-
-      <div class="info-item">
-        <strong>Media Sosial:</strong>
-        <div class="social-links">
-          <a href="https://youtube.com" target="_blank" class="social-btn youtube">YouTube</a>
-          <a href="https://tiktok.com" target="_blank" class="social-btn tiktok">TikTok</a>
-          <a href="https://instagram.com" target="_blank" class="social-btn instagram">Instagram</a>
+      <div class="info-card">
+        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="info-text">
+          <h3>Alamat</h3>
+          <p>Jl. dr. Wahidin Sudirohusodo No.22 Klaten 57432, Jawa Tengah, INDONESIA.</p>
         </div>
       </div>
 
-      <!-- Peta Google Maps -->
-      <div class="map-box">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.957591781476!2d110.5976543!3d-7.6876797!2m3!1f0!1f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a4417b1bfab8d%3A0x8bbd36cfa0279612!2sSMK%20Negeri%201%20Klaten!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
-          width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
+      <div class="info-card">
+        <div class="icon-box"><i class="fa-solid fa-clock"></i></div>
+        <div class="info-text">
+          <h3>Jam Kerja</h3>
+          <p>Senin – Kamis: 07.00 – 15.30 WIB<br>Jumat: 07.00 – 13.30 WIB<br>Sabtu – Minggu: Libur</p>
+        </div>
       </div>
+
+      <div class="info-card">
+        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+        <div class="info-text">
+          <h3>Email</h3>
+          <p>humas.smkn1klaten@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="info-card social-card">
+        <h3>Ikuti Media Sosial Kami</h3>
+        <div class="social-bar">
+          <a href="https://www.youtube.com/channel/UCid_9V0h7_zgqNY0teiWVhw" target="_blank" class="soc-btn"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.instagram.com/humas.smkn1klaten/" target="_blank" class="soc-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@kesiswaansmerusaka?_r=1&_t=ZS-99h7hCLAMnI" target="_blank" class="soc-btn"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.facebook.com/HSmkn1klaten/" target="_blank" class="soc-btn"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://x.com/HSmkn1klaten?t=Q1vLJ_naTd3dwVUgreQKuw&s" target="_blank" class="soc-btn"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Kolom Komentar / Pesan -->
-    <div class="comment-section">
-      <h2>Tinggalkan Komentar</h2>
-      <form class="comment-form" action="#" method="POST">
-        <div class="form-group">
-          <label for="name">Nama Lengkap</label>
-          <input type="text" id="name" name="name" placeholder="Masukkan nama kamu" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Masukkan email kamu" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="message">Komentar / Pesan</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tulis komentar atau pesan di sini..." required></textarea>
+    <!-- Kolom Kanan: Google Maps -->
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.957591781476!2d110.5976543!3d-7.6876797!2m3!1f0!1f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a4417b1bfab8d%3A0x8bbd36cfa0279612!2sSMK%20Negeri%201%20Klaten!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Bagian Aspirasi -->
+<section class="aspirasi-section">
+  <h1 class="aspirasi-title">A S P I R A S I</h1>
+  <div class="aspirasi-divider"></div>
+
+  <div class="aspirasi-wrapper">
+    <!-- Form Kirim Aspirasi -->
+    <div class="aspirasi-card form-box">
+      <form id="aspirasiForm">
+        <div class="input-group">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" placeholder="Kosongkan jika ingin anonim">
         </div>
 
-        <button type="submit" class="submit-btn">Kirim Komentar</button>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div class="input-group">
+          <label for="pesan">Aspirasi</label>
+          <textarea id="pesan" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-kirim">Kirim Aspirasi</button>
       </form>
     </div>
 
+    <!-- Daftar Aspirasi Terbaru -->
+    <div class="aspirasi-card display-box">
+      <h2>Aspirasi Terbaru</h2>
+      <div class="aspirasi-list" id="aspirasiList">
+        
+        <div class="aspirasi-item">
+          <div class="user-info">
+            <i class="fa-solid fa-circle-user avatar"></i>
+            <div class="user-meta">
+              <strong>Anonim</strong>
+              <span class="date">13 September 2026</span>
+            </div>
+          </div>
+          <div class="bubble-pesan">Tambah fasilitas lab</div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </section>
     
