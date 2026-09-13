@@ -1798,7 +1798,7 @@ body {
 
 /* Judul & Deskripsi */
 .section-title {
-  font-size: 38px;
+  font-size: 50px;
   font-weight: 800;
   color: #0b2545;
   margin: 0 0 12px 0;
@@ -1806,7 +1806,7 @@ body {
 
 .section-subtitle {
   color: #555555;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.6;
   margin: 0 0 45px 0;
 }
@@ -1832,7 +1832,7 @@ body {
 .info-card {
   background: #ffffff;
   border-radius: 30px;
-  padding: 20px 28px;
+  padding: 20px 15px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -1852,14 +1852,14 @@ body {
 
 .info-text h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 21px;
   color: #0b2545;
   font-weight: 700;
 }
 
 .info-text p {
   margin: 4px 0 0 0;
-  font-size: 13.5px;
+  font-size: 16px;
   color: #555555;
   line-height: 1.5;
 }
@@ -1874,8 +1874,8 @@ body {
 }
 
 .social-card h3 {
-  font-size: 15px;
-  margin: 0 0 12px 0;
+  font-size: 18px;
+  margin: 0 0 14px 0;
   color: #0b2545;
   font-weight: 700;
 }
@@ -1888,15 +1888,15 @@ body {
 }
 
 .soc-box {
-  width: 60px;
-  height: 44px;
+  width: 65px;
+  height: 48px;
   background-color: #0b2545;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 25px;
   text-decoration: none;
   transition: transform 0.2s, background-color 0.2s;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
