@@ -1754,7 +1754,189 @@ body {
 /* ==========================================
    1. GAYA DASAR / GLOBAL
    ========================================== */
+/* ==========================================
+   1. GAYA DASAR / RESET HALAMAN
+   ========================================== */
+* {
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f6f8fc;
+  color: #0b2545;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================
+   2. SECTION MARI TERHUBUNG DENGAN KAMI
+   ========================================== */
+.contact-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+/* Pill Badge "HUBUNGI KAMI" */
+.pill-badge {
+  display: inline-block;
+  background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 100%);
+  color: #0b2545;
+  padding: 10px 32px;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Judul & Deskripsi */
+.section-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #0b2545;
+  margin: 0 0 12px 0;
+}
+
+.section-subtitle {
+  color: #555555;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 45px 0;
+}
+
+/* Container Kolom Kontak & Maps */
+.contact-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 30px;
+  text-align: left;
+  align-items: stretch;
+}
+
+/* Kolom Kiri: Kartu Info & Medsos */
+.contact-info-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Kartu Info (Alamat, Jam Kerja, Email) */
+.info-card {
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.info-card .icon-box {
+  font-size: 30px;
+  color: #0b2545;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-text h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #0b2545;
+  font-weight: 700;
+}
+
+.info-text p {
+  margin: 4px 0 0 0;
+  font-size: 13.5px;
+  color: #555555;
+  line-height: 1.5;
+}
+
+/* Kartu Media Sosial */
+.social-card {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 18px 20px;
+}
+
+.social-card h3 {
+  font-size: 15px;
+  margin: 0 0 12px 0;
+  color: #0b2545;
+  font-weight: 700;
+}
+
+.social-grid {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.soc-box {
+  width: 60px;
+  height: 44px;
+  background-color: #0b2545;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.soc-box:hover {
+  transform: translateY(-3px);
+}
+
+.soc-box.yt i { color: #ff0000; }
+.soc-box.ig i { color: #e1306c; }
+.soc-box.tt i { color: #ffffff; }
+.soc-box.fb i { color: #1877f2; }
+.soc-box.tw i { color: #ffffff; }
+
+/* Kolom Kanan: Container Google Maps */
+.map-container {
+  flex: 1.1;
+  background: #ffffff;
+  border-radius: 35px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  min-height: 450px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+}
+
+/* Responsive Tampilan HP / Tablet */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    flex-direction: column !important;
+  }
+  
+  .map-container {
+    min-height: 350px;
+  }
+}
 
 /* ==========================================
    5. FOOTER SECTION
