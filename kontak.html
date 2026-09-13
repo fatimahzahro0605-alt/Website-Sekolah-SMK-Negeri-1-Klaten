@@ -33,86 +33,74 @@
         </ul>
     </nav>
 
-    <!-- SECTION KONTAK -->
-<section class="contact-section" id="kontak">
+   <section class="contact-section">
   <div class="contact-container">
     
-    <!-- HEADER SECTION -->
-    <div class="contact-header">
-      <span class="contact-badge">Hubungi Kami</span>
-      <h2 class="contact-title">Mari Terhubung Dengan Kami</h2>
-      <p class="contact-subtitle">Punya pertanyaan atau ingin bekerjasama? Silakan hubungi kami melalui saluran di bawah ini.</p>
-    </div>
-
-    <!-- GRID DUA KOLOM (KIRI: INFO KONTAK, KANAN: FORM PESAN & MAPS) -->
-    <div class="contact-grid">
+    <!-- Kartu Informasi Kontak -->
+    <div class="contact-info">
+      <h2>Hubungi Kami</h2>
       
-      <!-- KOLOM KIRI: INFO KONTAK & MEDSOS -->
-      <div class="contact-info-wrapper">
-        
-        <!-- KARTU INFO 1: ALAMAT -->
-        <div class="contact-card">
-          <div class="contact-icon-box">
-            📍
-          </div>
-          <div class="contact-details">
-            <h4>Alamat Utama</h4>
-            <p>Jl. dr. Wahidin Sudirohusodo No.22, Klaten, Jawa Tengah 57432</p>
-          </div>
-        </div>
-
-        <!-- KARTU INFO 2: TELEPON -->
-        <div class="contact-card">
-          <div class="contact-icon-box">
-            📞
-          </div>
-          <div class="contact-details">
-            <h4>Telepon / Whatsapp</h4>
-            <p>(0272) 321266 / +62 812-3456-7890</p>
-          </div>
-        </div>
-
-        <!-- KARTU INFO 3: EMAIL -->
-        <div class="contact-card">
-          <div class="contact-icon-box">
-            ✉️
-          </div>
-          <div class="contact-details">
-            <h4>Email Resmi</h4>
-            <p>info@smkn1klaten.sch.id</p>
-          </div>
-        </div>
-
-        <!-- MEDIA SOSIAL -->
-        <div class="social-box">
-          <h4>Ikuti Media Sosial Kami</h4>
-          <div class="social-links">
-            <a href="#" class="social-btn instagram">Instagram</a>
-            <a href="#" class="social-btn youtube">YouTube</a>
-            <a href="#" class="social-btn tiktok">TikTok</a>
-          </div>
-        </div>
-
+      <div class="info-item">
+        <strong>Alamat:</strong>
+        <p>Jl. Jend. Major Sungkono No. 55, Jonggrangan, Klaten Utara, Kab. Klaten, Jawa Tengah</p>
       </div>
 
-      <!-- KOLOM KANAN: PETA LOKASI GOOGLE MAPS INTERAKTIF -->
-      <div class="contact-map-wrapper">
+      <div class="info-item">
+        <strong>Email:</strong>
+        <p>smkn1klaten@yahoo.com</p>
+      </div>
+
+      <div class="info-item">
+        <strong>Jam Kerja:</strong>
+        <p>Senin – Kamis: 07.00 – 15.30 WIB</p>
+        <p>Jumat: 07.00 – 13.30 WIB</p>
+        <p>Sabtu – Minggu: Libur</p>
+      </div>
+
+      <div class="info-item">
+        <strong>Media Sosial:</strong>
+        <div class="social-links">
+          <a href="https://youtube.com" target="_blank" class="social-btn youtube">YouTube</a>
+          <a href="https://tiktok.com" target="_blank" class="social-btn tiktok">TikTok</a>
+          <a href="https://instagram.com" target="_blank" class="social-btn instagram">Instagram</a>
+        </div>
+      </div>
+
+      <!-- Peta Google Maps -->
+      <div class="map-box">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.649320641121!2d110.5975618!3d-7.7100093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a441315897931%3A0xb3ff7cb62a11b6cb!2sSMK%20Negeri%201%20Klaten!5e0!3m2!1sid!2sid!4v1700000000000" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.957591781476!2d110.5976543!3d-7.6876797!2m3!1f0!1f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a4417b1bfab8d%3A0x8bbd36cfa0279612!2sSMK%20Negeri%201%20Klaten!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+          width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
         </iframe>
       </div>
+    </div>
 
+    <!-- Kolom Komentar / Pesan -->
+    <div class="comment-section">
+      <h2>Tinggalkan Komentar</h2>
+      <form class="comment-form" action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Nama Lengkap</label>
+          <input type="text" id="name" name="name" placeholder="Masukkan nama kamu" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Masukkan email kamu" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Komentar / Pesan</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tulis komentar atau pesan di sini..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Kirim Komentar</button>
+      </form>
     </div>
 
   </div>
 </section>
-
+    
 <!-- ==========================================
        3. FOOTER SECTION
        ========================================== -->
