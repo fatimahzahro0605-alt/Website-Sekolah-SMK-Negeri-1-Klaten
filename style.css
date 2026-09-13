@@ -1751,20 +1751,114 @@ body {
     font-size: 0.85rem;
     color: #aaaaaa;
 }
-/* Layout Utama Kontak */
-/* Gaya Dasar */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f7f9fc;
-  color: #0b2545;
-  margin: 0;
-  padding: 20px;
+/* ==========================================
+   1. GAYA DASAR / GLOBAL
+   ========================================== */
+* {
+  box-sizing: border-box;
 }
 
-/* HUBUNGI KAMI */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fc;
+  color: #0b2545;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================
+   2. NAVBAR SECTION
+   ========================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b2545;
+  padding: 15px 5%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-img {
+  width: 50px;
+  height: auto;
+}
+
+.brand-title {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.brand-tagline {
+  color: #9bb1c9;
+  font-size: 12px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #f4d35e;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  padding: 8px 35px 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #9bb1c9;
+  outline: none;
+  font-size: 13px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+}
+
+/* ==========================================
+   3. SECTION HUBUNGI KAMI (FULL 1 HALAMAN LAYAR)
+   ========================================== */
 .contact-section {
-  max-width: 1100px;
-  margin: 40px auto;
+  max-width: 1250px;
+  min-height: calc(100vh - 80px); /* Pas 1 layar monitor */
+  margin: 0 auto;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
 }
 
@@ -1772,166 +1866,192 @@ body {
   display: inline-block;
   background: #dbe4ee;
   color: #0b2545;
-  padding: 6px 20px;
-  border-radius: 20px;
+  padding: 8px 24px;
+  border-radius: 25px;
   font-weight: bold;
-  font-size: 13px;
-  letter-spacing: 1px;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  margin: 0 auto 10px;
 }
 
 .section-title {
-  font-size: 32px;
+  font-size: 38px;
+  font-weight: 800;
   color: #0b2545;
-  margin: 15px 0 5px;
+  margin: 10px 0 8px;
 }
 
 .section-subtitle {
-  color: #666;
-  font-size: 14px;
-  margin-bottom: 30px;
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 35px;
 }
 
 .contact-wrapper {
   display: flex;
-  gap: 25px;
+  gap: 30px;
   text-align: left;
+  align-items: stretch;
 }
 
 .contact-info-list {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  justify-content: space-between;
+  gap: 18px;
 }
 
 .info-card {
   background: #ffffff;
-  border-radius: 25px;
-  padding: 15px 20px;
+  border-radius: 22px;
+  padding: 20px 25px;
   display: flex;
   align-items: center;
-  gap: 15px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+  gap: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
 }
 
 .info-card .icon-box {
-  font-size: 24px;
+  font-size: 28px;
   color: #0b2545;
-  width: 45px;
-  text-align: center;
+  width: 50px;
+  height: 50px;
+  background: #eef3f9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .info-text h3 {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   color: #0b2545;
+  font-weight: 700;
 }
 
 .info-text p {
-  margin: 3px 0 0;
-  font-size: 12px;
-  color: #666;
-  line-height: 1.4;
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
 }
 
-/* Media Sosial Bar */
+/* Kartu Media Sosial */
 .social-card {
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 18px 25px;
 }
 
 .social-card h3 {
-  font-size: 14px;
-  margin-bottom: 8px;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #0b2545;
 }
 
 .social-bar {
   background: #0b2545;
-  padding: 8px 15px;
-  border-radius: 15px;
+  padding: 10px 24px;
+  border-radius: 30px;
   display: flex;
-  gap: 12px;
+  gap: 20px;
 }
 
 .soc-btn {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 20px;
   text-decoration: none;
-  transition: transform 0.2s;
+  transition: transform 0.2s, color 0.2s;
 }
 
 .soc-btn:hover {
-  transform: scale(1.2);
+  transform: scale(1.25);
+  color: #f4d35e;
 }
 
-/* Maps Box */
+/* Kontainer Google Maps */
 .map-container {
-  flex: 1;
+  flex: 1.1;
   background: #ffffff;
-  border-radius: 30px;
+  border-radius: 25px;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-  min-height: 350px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  min-height: 480px;
 }
 
-/* ASPIRASI */
+/* ==========================================
+   4. SECTION ASPIRASI (DILIHAT DENGAN SCROLL)
+   ========================================== */
 .aspirasi-section {
-  max-width: 1100px;
-  margin: 60px auto;
+  max-width: 1250px;
+  min-height: 80vh;
+  margin: 40px auto 80px;
+  padding: 60px 25px 0;
   text-align: center;
 }
 
 .aspirasi-title {
-  font-size: 36px;
+  font-size: 38px;
+  font-weight: 800;
   letter-spacing: 12px;
   color: #0b2545;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .aspirasi-divider {
-  width: 90%;
+  width: 85%;
   height: 4px;
   background-color: #9bb1c9;
-  margin: 0 auto 40px;
+  margin: 0 auto 45px;
   border-radius: 2px;
 }
 
 .aspirasi-wrapper {
   display: flex;
-  gap: 30px;
+  gap: 35px;
   text-align: left;
 }
 
 .aspirasi-card {
   flex: 1;
   background: #ffffff;
-  border-radius: 30px;
-  padding: 30px;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+  border-radius: 25px;
+  padding: 30px 35px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
 }
 
 .input-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .input-group label {
   display: block;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 15px;
   color: #0b2545;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .input-group input, 
 .input-group textarea {
   width: 100%;
-  padding: 12px 15px;
+  padding: 12px 16px;
   border: 1.5px solid #0b2545;
-  border-radius: 15px;
-  box-sizing: border-box;
+  border-radius: 14px;
   font-family: inherit;
   outline: none;
+  font-size: 14px;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #134074;
+  box-shadow: 0 0 6px rgba(11, 37, 69, 0.25);
 }
 
 .btn-kirim {
@@ -1940,7 +2060,7 @@ body {
   color: white;
   border: none;
   padding: 14px;
-  border-radius: 15px;
+  border-radius: 14px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -1952,37 +2072,43 @@ body {
   background: #134074;
 }
 
-/* Display Aspirasi Terbaru */
+/* Daftar Aspirasi Terbaru */
 .display-box h2 {
-  font-size: 18px;
+  font-size: 22px;
   color: #0b2545;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .aspirasi-list {
-  max-height: 300px;
+  max-height: 380px;
   overflow-y: auto;
-  padding-right: 10px;
+  padding-right: 12px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
 
 .aspirasi-item {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.aspirasi-item:last-child {
+  border-bottom: none;
 }
 
 .user-info {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
 .avatar {
-  font-size: 26px;
+  font-size: 32px;
   color: #0b2545;
 }
 
@@ -1993,28 +2119,131 @@ body {
   align-items: center;
 }
 
-.user-meta strong {
-  font-size: 14px;
+.user-identity {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-identity strong {
+  font-size: 15px;
   color: #0b2545;
 }
 
+.user-email {
+  font-size: 12px;
+  color: #666;
+}
+
 .user-meta .date {
-  font-size: 10px;
+  font-size: 12px;
   color: #888;
 }
 
 .bubble-pesan {
-  background: #dcdcdc;
-  padding: 10px 15px;
-  border-radius: 15px;
-  font-size: 13px;
+  background: #eef3f9;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-size: 14px;
   color: #333;
+  line-height: 1.5;
 }
 
-/* Responsif HP */
-@media (max-width: 768px) {
+/* ==========================================
+   5. FOOTER SECTION
+   ========================================== */
+.footer-section {
+  background-color: #0b2545;
+  color: #ffffff;
+  padding: 50px 5% 25px;
+}
+
+.footer-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  justify-content: space-between;
+}
+
+.footer-col {
+  flex: 1 1 260px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.footer-logo {
+  width: 40px;
+}
+
+.footer-brand h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.footer-desc {
+  font-size: 13px;
+  color: #b0c4de;
+  line-height: 1.6;
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+
+.footer-links, .contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li, .contact-info li {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #b0c4de;
+}
+
+.footer-links a {
+  color: #b0c4de;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #f4d35e;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 25px;
+  margin-top: 35px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+  color: #888;
+}
+
+/* ==========================================
+   6. RESPONSIVE MEDIA QUERIES
+   ========================================== */
+@media (max-width: 992px) {
+  .contact-section {
+    min-height: auto;
+    padding-top: 40px;
+  }
+
   .contact-wrapper, .aspirasi-wrapper {
     flex-direction: column;
+  }
+
+  .map-container {
+    min-height: 350px;
   }
 }
    /* SECTION KEUNGGULAN SEKOLAH (RAPI & STABEL)*/
