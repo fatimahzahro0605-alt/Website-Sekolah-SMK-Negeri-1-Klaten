@@ -1832,7 +1832,7 @@ body {
 .info-card {
   background: #ffffff;
   border-radius: 30px;
-  padding: 20px 15px;
+  padding: 20px 5px;
   display: flex;
   align-items: center;
   gap: 20px;
