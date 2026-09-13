@@ -1752,133 +1752,272 @@ body {
     color: #aaaaaa;
 }
 /* Layout Utama Kontak */
+/* Gaya Dasar */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f9fc;
+  color: #0b2545;
+  margin: 0;
+  padding: 20px;
+}
+
+/* HUBUNGI KAMI */
 .contact-section {
-  padding: 40px 20px;
-  background-color: #f8f9fa;
-  font-family: Arial, sans-serif;
+  max-width: 1100px;
+  margin: 40px auto;
+  text-align: center;
 }
 
-.contact-container {
-  max-width: 1000px;
-  margin: 0 auto;
+.pill-badge {
+  display: inline-block;
+  background: #dbe4ee;
+  color: #0b2545;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.section-title {
+  font-size: 32px;
+  color: #0b2545;
+  margin: 15px 0 5px;
+}
+
+.section-subtitle {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.contact-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  gap: 25px;
+  text-align: left;
 }
 
-.contact-info, .comment-section {
-  flex: 1 1 450px;
+.contact-info-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info-card {
   background: #ffffff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 25px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
 }
 
-.contact-info h2, .comment-section h2 {
+.info-card .icon-box {
+  font-size: 24px;
+  color: #0b2545;
+  width: 45px;
+  text-align: center;
+}
+
+.info-text h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #0b2545;
+}
+
+.info-text p {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Media Sosial Bar */
+.social-card {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.social-card h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.social-bar {
+  background: #0b2545;
+  padding: 8px 15px;
+  border-radius: 15px;
+  display: flex;
+  gap: 12px;
+}
+
+.soc-btn {
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.soc-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Maps Box */
+.map-container {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+  min-height: 350px;
+}
+
+/* ASPIRASI */
+.aspirasi-section {
+  max-width: 1100px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.aspirasi-title {
+  font-size: 36px;
+  letter-spacing: 12px;
+  color: #0b2545;
+  margin-bottom: 10px;
+}
+
+.aspirasi-divider {
+  width: 90%;
+  height: 4px;
+  background-color: #9bb1c9;
+  margin: 0 auto 40px;
+  border-radius: 2px;
+}
+
+.aspirasi-wrapper {
+  display: flex;
+  gap: 30px;
+  text-align: left;
+}
+
+.aspirasi-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 30px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  color: #0b2545;
+  margin-bottom: 5px;
+}
+
+.input-group input, 
+.input-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1.5px solid #0b2545;
+  border-radius: 15px;
+  box-sizing: border-box;
+  font-family: inherit;
+  outline: none;
+}
+
+.btn-kirim {
+  width: 100%;
+  background: #0b2545;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.btn-kirim:hover {
+  background: #134074;
+}
+
+/* Display Aspirasi Terbaru */
+.display-box h2 {
+  font-size: 18px;
+  color: #0b2545;
   margin-top: 0;
-  color: #0d3b66;
-  border-bottom: 2px solid #f4d35e;
-  padding-bottom: 8px;
   margin-bottom: 20px;
 }
 
-/* Detail Informasi */
-.info-item {
-  margin-bottom: 15px;
-}
-
-.info-item strong {
-  color: #333;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.info-item p {
-  margin: 0;
-  color: #555;
-  line-height: 1.5;
-}
-
-/* Tombol Media Sosial */
-.social-links {
+.aspirasi-list {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
   display: flex;
-  gap: 10px;
-  margin-top: 8px;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.social-btn {
-  padding: 8px 14px;
-  border-radius: 6px;
-  text-decoration: none;
-  color: #fff;
+.aspirasi-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  font-size: 26px;
+  color: #0b2545;
+}
+
+.user-meta {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.user-meta strong {
   font-size: 14px;
-  font-weight: bold;
+  color: #0b2545;
 }
 
-.youtube { background-color: #ff0000; }
-.tiktok { background-color: #000000; }
-.instagram { background-color: #e1306c; }
-
-/* Peta Google Maps */
-.map-box {
-  margin-top: 20px;
-  border-radius: 8px;
-  overflow: hidden;
+.user-meta .date {
+  font-size: 10px;
+  color: #888;
 }
 
-/* Form Komentar */
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
+.bubble-pesan {
+  background: #dcdcdc;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 13px;
   color: #333;
-  font-weight: bold;
 }
 
-.form-group input, 
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-sizing: border-box;
-  font-family: inherit;
-}
-
-.form-group input:focus, 
-.form-group textarea:focus {
-  outline: none;
-  border-color: #0d3b66;
-}
-
-.submit-btn {
-  background-color: #0d3b66;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  width: 100%;
-}
-
-.submit-btn:hover {
-  background-color: #082642;
-}
-
-/* Penyesuaian Responsif HP */
+/* Responsif HP */
 @media (max-width: 768px) {
-  .contact-container {
+  .contact-wrapper, .aspirasi-wrapper {
     flex-direction: column;
   }
 }
-
-/* ==========================================
-   SECTION KEUNGGULAN SEKOLAH (RAPI & STABEL)
-   ========================================== */
+   /* SECTION KEUNGGULAN SEKOLAH (RAPI & STABEL)*/
 .advantages-section {
     background-color: #0b2f64;
     width: 100%;
