@@ -1751,162 +1751,128 @@ body {
     font-size: 0.85rem;
     color: #aaaaaa;
 }
-
-/* SECTION KONTAK */
+/* Layout Utama Kontak */
 .contact-section {
-  padding: 120px 20px;
-  background-color: #f8fafc;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
 }
 
 .contact-container {
-  max-width: 1300px;
+  max-width: 1000px;
   margin: 0 auto;
-}
-
-/* HEADER KONTAK */
-.contact-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.contact-badge {
-  background-color: #e2e8f0;
-  color: #0b3260;
-  font-size: 0.85rem;
-  font-weight: 800;
-  padding: 6px 16px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.contact-title {
-  color: #0b3260;
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin: 15px 0 10px 0;
-}
-
-.contact-subtitle {
-  color: #64748b;
-  font-size: 1.05rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* GRID LAYOUT (2 KOLOM) */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
-  align-items: stretch;
-}
-
-/* KARTU INFO KONTAK */
-.contact-info-wrapper {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
-.contact-card {
-  background-color: #ffffff;
-  padding: 24px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.contact-info, .comment-section {
+  flex: 1 1 450px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-.contact-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(11, 50, 96, 0.1);
+.contact-info h2, .comment-section h2 {
+  margin-top: 0;
+  color: #0d3b66;
+  border-bottom: 2px solid #f4d35e;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
 }
 
-.contact-icon-box {
-  width: 60px;
-  height: 60px;
-  background-color: #0b3260;
-  color: #ffffff;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  flex-shrink: 0;
+/* Detail Informasi */
+.info-item {
+  margin-bottom: 15px;
 }
 
-.contact-details h4 {
-  color: #0b3260;
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin: 0 0 5px 0;
+.info-item strong {
+  color: #333;
+  display: block;
+  margin-bottom: 4px;
 }
 
-.contact-details p {
-  color: #64748b;
-  font-size: 0.95rem;
+.info-item p {
   margin: 0;
-  line-height: 1.4;
+  color: #555;
+  line-height: 1.5;
 }
 
-/* MEDIA SOSIAL BUTTONS */
-.social-box {
-  background-color: #ffffff;
-  padding: 24px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-}
-
-.social-box h4 {
-  color: #0b3260;
-  margin: 0 0 15px 0;
-  font-size: 1.05rem;
-}
-
+/* Tombol Media Sosial */
 .social-links {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
 }
 
 .social-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
   text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: #ffffff;
-  transition: all 0.3s ease;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-.social-btn.instagram { background-color: #e1306c; }
-.social-btn.youtube { background-color: #ff0000; }
-.social-btn.tiktok { background-color: #000000; }
+.youtube { background-color: #ff0000; }
+.tiktok { background-color: #000000; }
+.instagram { background-color: #e1306c; }
 
-.social-btn:hover {
-  opacity: 0.85;
-  transform: translateY(-3px);
-}
-
-/* PETA GOOGLE MAPS */
-.contact-map-wrapper {
-  border-radius: 24px;
+/* Peta Google Maps */
+.map-box {
+  margin-top: 20px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  min-height: 400px;
 }
 
-/* RESPONSIVE LAYAR HP & TABLET */
-@media (max-width: 992px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-  .contact-map-wrapper {
-    height: 350px;
+/* Form Komentar */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0d3b66;
+}
+
+.submit-btn {
+  background-color: #0d3b66;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #082642;
+}
+
+/* Penyesuaian Responsif HP */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
   }
 }
 
