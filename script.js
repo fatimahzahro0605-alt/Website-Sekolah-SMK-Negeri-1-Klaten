@@ -246,17 +246,25 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById('aspirasiForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
+  // Mengambil nilai input dari form
   let namaInput = document.getElementById('nama').value.trim();
+  const emailInput = document.getElementById('email').value.trim();
   const pesanInput = document.getElementById('pesan').value.trim();
   const aspirasiList = document.getElementById('aspirasiList');
 
+  // Jika nama tidak diisi, gunakan nama 'Anonim'
   if (namaInput === '') {
     namaInput = 'Anonim';
   }
 
+  // Waktu pengiriman (Tanggal & Jam)
+  const sekarang = new Date();
   const opsiTanggal = { day: 'numeric', month: 'long', year: 'numeric' };
-  const tanggalSekarang = new Date().toLocaleDateString('id-ID', opsiTanggal);
+  const tanggalFormat = sekarang.toLocaleDateString('id-ID', opsiTanggal);
+  const jamFormat = sekarang.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }).replace(':', '.');
+  const waktuKirim = `${tanggalFormat}, ${jamFormat} WIB`;
 
+  // Membuat elemen baru untuk daftar aspirasi
   const itemBaru = document.createElement('div');
   itemBaru.classList.add('aspirasi-item');
 
@@ -264,13 +272,19 @@ document.getElementById('aspirasiForm').addEventListener('submit', function(e) {
     <div class="user-info">
       <i class="fa-solid fa-circle-user avatar"></i>
       <div class="user-meta">
-        <strong>${namaInput}</strong>
-        <span class="date">${tanggalSekarang}</span>
+        <div class="user-identity">
+          <strong>${namaInput}</strong>
+          <span class="user-email">${emailInput}</span>
+        </div>
+        <span class="date">${waktuKirim}</span>
       </div>
     </div>
     <div class="bubble-pesan">${pesanInput}</div>
   `;
 
+  // Tambahkan aspirasi terbaru ke paling atas
   aspirasiList.prepend(itemBaru);
+
+  // Reset form setelah dikirim
   document.getElementById('aspirasiForm').reset();
 });
