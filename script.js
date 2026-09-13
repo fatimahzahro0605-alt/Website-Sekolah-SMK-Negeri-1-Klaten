@@ -243,48 +243,49 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // kontak//
-document.getElementById('aspirasiForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+  const formAspirasi = document.getElementById('formAspirasi');
+  const aspirasiContainer = document.getElementById('aspirasiContainer');
 
-  // Mengambil nilai input dari form
-  let namaInput = document.getElementById('nama').value.trim();
-  const emailInput = document.getElementById('email').value.trim();
-  const pesanInput = document.getElementById('pesan').value.trim();
-  const aspirasiList = document.getElementById('aspirasiList');
+  formAspirasi.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-  // Jika nama tidak diisi, gunakan nama 'Anonim'
-  if (namaInput === '') {
-    namaInput = 'Anonim';
-  }
+    // Ambil nilai dari form
+    const nama = document.getElementById('nama').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const pesan = document.getElementById('pesan').value.trim();
 
-  // Waktu pengiriman (Tanggal & Jam)
-  const sekarang = new Date();
-  const opsiTanggal = { day: 'numeric', month: 'long', year: 'numeric' };
-  const tanggalFormat = sekarang.toLocaleDateString('id-ID', opsiTanggal);
-  const jamFormat = sekarang.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }).replace(':', '.');
-  const waktuKirim = `${tanggalFormat}, ${jamFormat} WIB`;
+    if (!nama || !email || !pesan) {
+      alert('Harap isi semua kolom!');
+      return;
+    }
 
-  // Membuat elemen baru untuk daftar aspirasi
-  const itemBaru = document.createElement('div');
-  itemBaru.classList.add('aspirasi-item');
+    // Format tanggal otomatis saat di-submit
+    const hariIni = new Date();
+    const opsiTanggal = { day: 'numeric', month: 'long', year: 'numeric' };
+    const tanggalFormatted = hariIni.toLocaleDateString('id-ID', opsiTanggal);
 
-  itemBaru.innerHTML = `
-    <div class="user-info">
-      <i class="fa-solid fa-circle-user avatar"></i>
-      <div class="user-meta">
-        <div class="user-identity">
-          <strong>${namaInput}</strong>
-          <span class="user-email">${emailInput}</span>
+    // Buat elemen item aspirasi baru
+    const itemBaru = document.createElement('div');
+    itemBaru.className = 'aspirasi-item';
+    itemBaru.innerHTML = `
+      <div class="user-info">
+        <i class="fa-solid fa-circle-user avatar"></i>
+        <div class="user-meta">
+          <div class="user-identity">
+            <strong>${nama}</strong>
+            <span class="user-email">${email}</span>
+          </div>
+          <span class="date">${tanggalFormatted}</span>
         </div>
-        <span class="date">${waktuKirim}</span>
       </div>
-    </div>
-    <div class="bubble-pesan">${pesanInput}</div>
-  `;
+      <div class="bubble-pesan">${pesan}</div>
+    `;
 
-  // Tambahkan aspirasi terbaru ke paling atas
-  aspirasiList.prepend(itemBaru);
+    // Tambahkan item baru ke urutan paling atas
+    aspirasiContainer.insertBefore(itemBaru, aspirasiContainer.firstChild);
 
-  // Reset form setelah dikirim
-  document.getElementById('aspirasiForm').reset();
+    // Kosongkan form kembali
+    formAspirasi.reset();
+  });
 });
