@@ -241,3 +241,36 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// kontak//
+document.getElementById('aspirasiForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  let namaInput = document.getElementById('nama').value.trim();
+  const pesanInput = document.getElementById('pesan').value.trim();
+  const aspirasiList = document.getElementById('aspirasiList');
+
+  if (namaInput === '') {
+    namaInput = 'Anonim';
+  }
+
+  const opsiTanggal = { day: 'numeric', month: 'long', year: 'numeric' };
+  const tanggalSekarang = new Date().toLocaleDateString('id-ID', opsiTanggal);
+
+  const itemBaru = document.createElement('div');
+  itemBaru.classList.add('aspirasi-item');
+
+  itemBaru.innerHTML = `
+    <div class="user-info">
+      <i class="fa-solid fa-circle-user avatar"></i>
+      <div class="user-meta">
+        <strong>${namaInput}</strong>
+        <span class="date">${tanggalSekarang}</span>
+      </div>
+    </div>
+    <div class="bubble-pesan">${pesanInput}</div>
+  `;
+
+  aspirasiList.prepend(itemBaru);
+  document.getElementById('aspirasiForm').reset();
+});
