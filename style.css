@@ -1784,7 +1784,7 @@ body {
   width: 100% !important;
   max-width: 1500px !important;
   margin: 0 auto !important;
-  padding: 150px 40px 60px 40px !important; /* Padding atas ditambah dari 100px ke 140px biar agak turun */
+  padding: 150px 40px 60px 40px !important;
   text-align: center;
   box-sizing: border-box;
 }
@@ -1829,6 +1829,7 @@ body {
   width: 100% !important;
   box-sizing: border-box;
 }
+
 /* Kolom Kiri: Kartu Info & Medsos */
 .contact-info-list {
   flex: 1 !important;
@@ -1836,6 +1837,7 @@ body {
   flex-direction: column;
   gap: 18px !important;
 }
+
 /* Kartu Info (Alamat, Jam Kerja, Email) */
 .info-card {
   background: #ffffff;
@@ -1920,19 +1922,18 @@ body {
 .soc-box.fb i { color: #1877f2; }
 .soc-box.tw i { color: #ffffff; }
 
-/* KOLOM KANAN (CONTAINER MAPS) */
 /* CONTAINER MAPS */
 .map-container {
   flex: 1 !important;
   background: #ffffff;
   border-radius: 30px;
-  overflow: hidden !important; /* Mencegah iframe meluber keluar */
+  overflow: hidden !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   margin-left: 20px !important;
   box-sizing: border-box;
   position: relative !important;
   width: 100% !important;
-  min-height: 520px !important; /* Memberikan tinggi pas */
+  min-height: 520px !important;
 }
 
 /* IFRAME GOOGLE MAPS */
@@ -1944,7 +1945,32 @@ body {
   height: 100% !important;
   border: 0 !important;
 }
-</div>
+
+/* TOMBOL BUKA DI GOOGLE MAPS */
+.btn-open-map {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  background-color: #ffffff;
+  color: #0b2545;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-open-map:hover {
+  background-color: #f0f4f8;
+  transform: translateY(-2px);
+}
+
 /* Responsive Tampilan HP / Tablet */
 @media (max-width: 900px) {
   .contact-wrapper {
@@ -1954,9 +1980,9 @@ body {
   .map-container {
     min-width: 100% !important;
     min-height: 380px !important;
+    margin-left: 0 !important;
   }
 }
-
 
 /* SECTION ASPIRASI */
 .aspirasi-section {
