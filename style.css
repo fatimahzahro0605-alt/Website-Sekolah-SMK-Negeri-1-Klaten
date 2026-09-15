@@ -1777,7 +1777,7 @@ body {
   width: 100% !important;
   max-width: 1500px !important;
   margin: 0 auto !important;
-  padding: 180px 40px 60px 40px !important; /* Padding atas ditambah dari 100px ke 140px biar agak turun */
+  padding: 170px 40px 60px 40px !important; /* Padding atas ditambah dari 100px ke 140px biar agak turun */
   text-align: center;
   box-sizing: border-box;
 }
