@@ -1941,8 +1941,9 @@ body {
 
 /* SECTION ASPIRASI */
 .aspirasi-section {
-  padding: 60px 20px;
-  max-width: 1100px;
+  padding: 60px 40px;
+  width: 95%;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -1966,7 +1967,7 @@ body {
 .aspirasi-wrapper {
   display: flex;
   gap: 30px;
-  justify-content: center;
+  width: 100%;
 }
 
 /* KARTU KIRI & KANAN */
