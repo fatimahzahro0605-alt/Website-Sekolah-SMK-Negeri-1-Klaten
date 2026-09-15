@@ -1914,20 +1914,24 @@ body {
 .soc-box.fb i { color: #1877f2; }
 .soc-box.tw i { color: #ffffff; }
 
-/* Kolom Kanan: Container Google Maps */
+//* KOLOM KANAN (CONTAINER MAPS) */
 .map-container {
-  flex: 1.5 !important; /* Maps diperlebar ke kanan */
+  flex: 1.3 !important; /* Dibuat 1.3 biar maps melar lebih lebar ke kanan */
   background: #ffffff;
-  border-radius: 35px;
+  border-radius: 25px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  min-height: 520px !important; /* Peta dibuat lebih tinggi */
+  display: flex !important; /* Menghilangkan sela/spasi kosong */
+  height: 100% !important;
 }
 
+/* IFRAME GOOGLE MAPS */
 .map-container iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 520px !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  border: 0 !important;
+  display: block !important; /* Wajib diset block agar ruang putih di bawah hilang */
 }
 
 /* Responsive Tampilan HP / Tablet */
