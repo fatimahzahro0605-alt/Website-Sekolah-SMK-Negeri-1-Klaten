@@ -1773,77 +1773,78 @@ body {
    2. SECTION MARI TERHUBUNG DENGAN KAMI
    ========================================== */
 .contact-section {
-  width: 90%;
-  max-width: 1200px;
+  width: 100% !important;
+  max-width: 100% !important;
   margin: 0 auto;
-  padding-top: 80px;
-  padding-bottom: 60px;
+  padding: 90px 5% 60px 5% !important; /* Dibuat mekar ke samping & atas-bawah */
   text-align: center;
+  box-sizing: border-box;
 }
 
 .pill-badge {
   display: inline-block !important;
   background: linear-gradient(180deg, #dbe2ef 0%, #c8d6e5 100%);
   color: #0b2545;
-  padding: 8px 28px;
+  padding: 10px 32px !important;
   border-radius: 50px;
   font-weight: 800;
-  font-size: 13px;
+  font-size: 15px !important; /* Badge diperbesar */
   letter-spacing: 2px;
-  margin-top: 70px;
-  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 18px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   border: 1px solid #b8c7d9;
 }
 
 /* Judul & Deskripsi */
 .section-title {
-  font-size: 50px;
+  font-size: 52px !important; /* Judul diperbesar */
   font-weight: 800;
   color: #0b2545;
-  margin: 0 0 12px 0;
+  margin: 0 0 14px 0;
 }
 
 .section-subtitle {
   color: #555555;
-  font-size: 20px;
+  font-size: 22px !important; /* Subtitle diperbesar */
   line-height: 1.6;
-  margin: 0 0 45px 0;
+  margin: 0 0 50px 0;
 }
 
 /* Container Kolom Kontak & Maps */
 .contact-wrapper {
   display: flex !important;
   flex-direction: row !important;
-  gap: 30px;
+  gap: 40px !important;
   text-align: left;
   align-items: stretch;
+  width: 100%;
 }
 
 /* Kolom Kiri: Kartu Info & Medsos */
 .contact-info-list {
-  flex: 1.4;
+  flex: 1.2 !important;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px !important;
 }
 
 /* Kartu Info (Alamat, Jam Kerja, Email) */
 .info-card {
   background: #ffffff;
   border-radius: 30px;
-  padding: 20px 20px;
+  padding: 28px 32px !important; /* Card dibuat lebih tebal */
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 24px !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
 .info-card .icon-box {
-  font-size: 34px;
+  font-size: 40px !important; /* Ukuran icon diperbesar */
   color: #0b2545;
-  width: 55px;
-  height: 55px;
+  width: 65px !important;
+  height: 65px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1852,15 +1853,15 @@ body {
 
 .info-text h3 {
   margin: 0;
-  font-size: 22px;
+  font-size: 24px !important; /* Judul info diperbesar */
   color: #0b2545;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .info-text p {
-  margin: 4px 0 0 0;
-  font-size: 16px;
-  color: #555555;
+  margin: 6px 0 0 0;
+  font-size: 18px !important; /* Teks isi alamat/jam kerja diperbesar */
+  color: #444444;
   line-height: 1.5;
 }
 
@@ -1870,40 +1871,40 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 18px 20px;
+  padding: 24px 28px !important;
 }
 
 .social-card h3 {
-  font-size: 18px;
-  margin: 0 0 14px 0;
+  font-size: 22px !important; /* Judul medsos diperbesar */
+  margin: 0 0 18px 0;
   color: #0b2545;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .social-grid {
   display: flex;
-  gap: 10px;
+  gap: 14px !important;
   justify-content: center;
   width: 100%;
 }
 
 .soc-box {
-  width: 65px;
-  height: 48px;
+  width: 75px !important; /* Tombol icon medsos diperbesar */
+  height: 55px !important;
   background-color: #0b2545;
-  border-radius: 12px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  font-size: 25px;
+  font-size: 28px !important;
   text-decoration: none;
   transition: transform 0.2s, background-color 0.2s;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
 .soc-box:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
 .soc-box.yt i { color: #ff0000; }
@@ -1914,18 +1915,18 @@ body {
 
 /* Kolom Kanan: Container Google Maps */
 .map-container {
-  flex: 1.1;
+  flex: 1.5 !important; /* Maps diperlebar ke kanan */
   background: #ffffff;
   border-radius: 35px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  min-height: 450px;
+  min-height: 520px !important; /* Peta dibuat lebih tinggi */
 }
 
 .map-container iframe {
   width: 100%;
   height: 100%;
-  min-height: 450px;
+  min-height: 520px !important;
 }
 
 /* Responsive Tampilan HP / Tablet */
@@ -1935,9 +1936,10 @@ body {
   }
   
   .map-container {
-    min-height: 350px;
+    min-height: 380px !important;
   }
 }
+
 
 /* SECTION ASPIRASI */
 /* SECTION ASPIRASI (FULL 1 LAYAR & LEBIH TINGGI) */
