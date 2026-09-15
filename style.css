@@ -2075,9 +2075,20 @@ body {
   gap: 14px;
 }
 
-.avatar {
-  font-size: 46px !important; /* Icon profil lebih gede */
-  color: #0b2545;
+/* AVATAR INISIAL LINGKARAN (BARU) */
+.avatar-initial {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  background-color: #0b2545; /* Warna lingkaran */
+  color: #ffffff;            /* Warna huruf inisial */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .user-meta {
@@ -2103,7 +2114,7 @@ body {
   padding: 16px 22px !important; /* Bubble chat lebih tebal */
   border-radius: 18px;
   font-size: 17px !important; /* Teks isi aspirasi lebih besar & jelas */
-  margin-left: 60px;
+  margin-left: 62px;          /* Pas sejajar sama teks nama setelah avatar */
   line-height: 1.5;
   font-weight: 500;
 }
