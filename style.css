@@ -2996,3 +2996,60 @@ body::-webkit-scrollbar {
     font-size: 14px !important;
   }
 }
+
+/* RESPONSIVE MOBILE FIX (HP) */
+@media (max-width: 768px) {
+  /* Fix Header & Navbar */
+  header, nav, .navbar {
+    padding: 10px 15px !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .logo img, .navbar-brand img {
+    height: 35px !important;
+    width: auto !important;
+  }
+
+  .nav-links, .menu-list {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px 15px !important;
+    padding: 5px 0 !important;
+  }
+
+  .nav-links a, .menu-list a {
+    font-size: 13px !important;
+  }
+
+  /* Fix Judul Raksasa di Hero Section */
+  .hero-title, h1 {
+    font-size: 28px !important; /* Dikecilkan dari ukuran besar */
+    line-height: 1.2 !important;
+    margin-top: 15px !important;
+    margin-bottom: 10px !important;
+    padding: 0 10px !important;
+  }
+
+  .hero-subtitle, .hero p {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Fix Spasi Section */
+  .contact-section {
+    padding-top: 100px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .section-title {
+    font-size: 28px !important;
+  }
+
+  .section-subtitle {
+    font-size: 15px !important;
+    margin-bottom: 25px !important;
+  }
+}
