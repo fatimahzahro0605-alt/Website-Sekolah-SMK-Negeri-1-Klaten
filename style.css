@@ -1774,12 +1774,13 @@ body {
    ========================================== */
 .contact-section {
   width: 100% !important;
-  max-width: 1300px !important;
-  margin: 0 auto !important;
-  padding: 130px 40px 60px 40px !important; /* Pushing ke bawah dari navbar */
+  max-width: 1500px !important; /* Dibuat 1500px agar proporsional */
+  margin: 0 auto !important;     /* Menjaga seluruh section tetap presisi di tengah */
+  padding: 130px 40px 60px 40px !important;
   text-align: center;
   box-sizing: border-box;
 }
+
 .pill-badge {
   display: inline-block !important;
   background: linear-gradient(180deg, #dbe2ef 0%, #c8d6e5 100%);
@@ -1814,10 +1815,11 @@ body {
 .contact-wrapper {
   display: flex !important;
   flex-direction: row !important;
-  gap: 30px !important;
+  gap: 35px !important;
   text-align: left;
   align-items: stretch;
-  width: 100%;
+  width: 100% !important;
+  box-sizing: border-box;
 }
 
 /* Kolom Kiri: Kartu Info & Medsos */
