@@ -1774,24 +1774,23 @@ body {
    ========================================== */
 .contact-section {
   width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 auto;
-  padding: 90px 5% 60px 5% !important; /* Dibuat mekar ke samping & atas-bawah */
+  max-width: 1300px !important;
+  margin: 0 auto !important;
+  padding: 130px 40px 60px 40px !important; /* Pushing ke bawah dari navbar */
   text-align: center;
   box-sizing: border-box;
 }
-
 .pill-badge {
   display: inline-block !important;
   background: linear-gradient(180deg, #dbe2ef 0%, #c8d6e5 100%);
   color: #0b2545;
-  padding: 10px 32px !important;
+  padding: 8px 26px !important;
   border-radius: 50px;
   font-weight: 800;
-  font-size: 15px !important; /* Badge diperbesar */
+  font-size: 13px !important;
   letter-spacing: 2px;
-  margin-top: 20px;
-  margin-bottom: 18px;
+  margin-top: 0 !important; /* Margin top di-reset karena sudah ditangani padding section */
+  margin-bottom: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   border: 1px solid #b8c7d9;
 }
@@ -1815,7 +1814,7 @@ body {
 .contact-wrapper {
   display: flex !important;
   flex-direction: row !important;
-  gap: 40px !important;
+  gap: 30px !important;
   text-align: left;
   align-items: stretch;
   width: 100%;
@@ -1826,7 +1825,7 @@ body {
   flex: 1.2 !important;
   display: flex;
   flex-direction: column;
-  gap: 20px !important;
+  gap: 18px !important;
 }
 
 /* Kartu Info (Alamat, Jam Kerja, Email) */
