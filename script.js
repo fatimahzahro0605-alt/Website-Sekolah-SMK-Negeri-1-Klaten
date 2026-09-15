@@ -247,14 +247,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const formAspirasi = document.getElementById('formAspirasi');
   const aspirasiContainer = document.getElementById('aspirasiContainer');
 
-  // 1. Fungsi buat nampilin item ke HTML
-  function tampilkanAspirasiKeUI(nama, tanggal, pesan) {
+  // 1. Fungsi penentu inisial huruf depan dari Nama / Email
+  function dapatkanInisial(nama, email) {
+    if (nama && nama.toLowerCase() !== "anonim") {
+      return nama.charAt(0).toUpperCase();
+    } else if (email) {
+      return email.charAt(0).toUpperCase();
+    }
+    return "A";
+  }
+
+  // 2. Fungsi nampilin item ke HTML (ditambahkan parameter email & avatar inisial)
+  function tampilkanAspirasiKeUI(nama, email, tanggal, pesan) {
     const itemBaru = document.createElement('div');
     itemBaru.classList.add('aspirasi-item');
 
+    const inisial = dapatkanInisial(nama, email);
+
     itemBaru.innerHTML = `
       <div class="user-info">
-        <i class="fa-solid fa-circle-user avatar"></i>
+        <div class="avatar-initial">${inisial}</div>
         <div class="user-meta">
           <div class="user-identity">
             <strong>${nama}</strong>
@@ -269,22 +281,23 @@ document.addEventListener('DOMContentLoaded', () => {
     aspirasiContainer.prepend(itemBaru);
   }
 
-  // 2. Load data tersimpan saat web pertama kali dibuka/di-refresh
+  // 3. Load data tersimpan saat web dibuka/refresh
   function muatAspirasiTersimpan() {
     const dataTersimpan = JSON.parse(localStorage.getItem('daftarAspirasi')) || [];
-    aspirasiContainer.innerHTML = ''; // Bersihkan container
+    aspirasiContainer.innerHTML = '';
 
     dataTersimpan.forEach(item => {
-      tampilkanAspirasiKeUI(item.nama, item.tanggal, item.pesan);
+      tampilkanAspirasiKeUI(item.nama, item.email, item.tanggal, item.pesan);
     });
   }
 
-  // 3. Event handler saat form dikirim
+  // 4. Event handler saat form dikirim
   formAspirasi.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Ambil Nilai Input
+    // Ambil Nilai Input (termasuk email)
     const namaInput = document.getElementById('nama').value.trim();
+    const emailInput = document.getElementById('email').value.trim();
     const pesanInput = document.getElementById('pesan').value.trim();
 
     // Logika nama jika kosong / diisi
@@ -296,12 +309,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const tanggalTampil = hariIni.toLocaleDateString('id-ID', opsiTanggal);
 
     // Tampilkan di UI
-    tampilkanAspirasiKeUI(namaTampil, tanggalTampil, pesanInput);
+    tampilkanAspirasiKeUI(namaTampil, emailInput, tanggalTampil, pesanInput);
 
-    // Simpan ke localStorage
+    // Simpan ke localStorage (termasuk email)
     const dataTersimpan = JSON.parse(localStorage.getItem('daftarAspirasi')) || [];
     dataTersimpan.push({
       nama: namaTampil,
+      email: emailInput,
       tanggal: tanggalTampil,
       pesan: pesanInput
     });
