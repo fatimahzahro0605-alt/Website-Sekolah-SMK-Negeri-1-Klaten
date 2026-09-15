@@ -1939,6 +1939,168 @@ body {
   }
 }
 
+/* SECTION ASPIRASI */
+.aspirasi-section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.aspirasi-title {
+  text-align: center;
+  color: #0b2545;
+  letter-spacing: 12px;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.aspirasi-divider {
+  width: 100%;
+  height: 4px;
+  background-color: #8da9c4;
+  border-radius: 2px;
+  margin-bottom: 40px;
+}
+
+.aspirasi-wrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* KARTU KIRI & KANAN */
+.aspirasi-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* FORM STYLING */
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-weight: 700;
+  color: #0b2545;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px 18px;
+  border: 1.5px solid #0b2545;
+  border-radius: 18px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #134074;
+  box-shadow: 0 0 5px rgba(19, 64, 116, 0.3);
+}
+
+.btn-kirim {
+  width: 100%;
+  padding: 14px;
+  background-color: #0b2545;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-kirim:hover {
+  background-color: #134074;
+}
+
+/* DAFTAR ASPIRASI (KANAN) */
+.display-box h2 {
+  color: #0b2545;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* SCROLLBAR AREA */
+.aspirasi-list {
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Kustomisasi Scrollbar halus */
+.aspirasi-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.aspirasi-list::-webkit-scrollbar-thumb {
+  background-color: #8da9c4;
+  border-radius: 10px;
+}
+
+/* ITEM ASPIRASI */
+.aspirasi-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  font-size: 38px;
+  color: #0b2545;
+}
+
+.user-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.user-identity strong {
+  font-size: 16px;
+  color: #0b2545;
+}
+
+.date {
+  font-size: 12px;
+  color: #888888;
+}
+
+/* BUBBLE PESAN */
+.bubble-pesan {
+  background-color: #d9d9d9;
+  color: #333333;
+  padding: 12px 18px;
+  border-radius: 15px;
+  font-size: 14px;
+  margin-left: 50px; /* Sejajar dengan teks nama di samping avatar */
+  line-height: 1.4;
+}
+
 /* ==========================================
    5. FOOTER SECTION
    ========================================== */
