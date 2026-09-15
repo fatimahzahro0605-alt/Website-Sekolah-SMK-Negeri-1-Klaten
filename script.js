@@ -243,49 +243,49 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // kontak//
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   const formAspirasi = document.getElementById('formAspirasi');
   const aspirasiContainer = document.getElementById('aspirasiContainer');
 
   formAspirasi.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Ambil nilai dari form
-    const nama = document.getElementById('nama').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const pesan = document.getElementById('pesan').value.trim();
+    // Ambil Nilai Input
+    const namaInput = document.getElementById('nama').value.trim();
+    const pesanInput = document.getElementById('pesan').value.trim();
 
-    if (!nama || !email || !pesan) {
-      alert('Harap isi semua kolom!');
-      return;
-    }
+    // Logika nama jika kosong / diisi
+    const namaTampil = namaInput !== "" ? namaInput : "Anonim";
 
-    // Format tanggal otomatis saat di-submit
+    // Format Tanggal Otomatis (Contoh: 15 September 2026)
     const hariIni = new Date();
     const opsiTanggal = { day: 'numeric', month: 'long', year: 'numeric' };
-    const tanggalFormatted = hariIni.toLocaleDateString('id-ID', opsiTanggal);
+    const tanggalTampil = hariIni.toLocaleDateString('id-ID', opsiTanggal);
 
-    // Buat elemen item aspirasi baru
+    // Buat Elemen Aspirasi Baru
     const itemBaru = document.createElement('div');
-    itemBaru.className = 'aspirasi-item';
+    itemBaru.classList.add('aspirasi-item');
+
     itemBaru.innerHTML = `
       <div class="user-info">
         <i class="fa-solid fa-circle-user avatar"></i>
         <div class="user-meta">
           <div class="user-identity">
-            <strong>${nama}</strong>
-            <span class="user-email">${email}</span>
+            <strong>${namaTampil}</strong>
           </div>
-          <span class="date">${tanggalFormatted}</span>
+          <span class="date">${tanggalTampil}</span>
         </div>
       </div>
-      <div class="bubble-pesan">${pesan}</div>
+      <div class="bubble-pesan">${pesanInput}</div>
     `;
 
-    // Tambahkan item baru ke urutan paling atas
-    aspirasiContainer.insertBefore(itemBaru, aspirasiContainer.firstChild);
+    // Masukkan ke Paling Atas (Terbaru ke Terlama)
+    aspirasiContainer.prepend(itemBaru);
 
-    // Kosongkan form kembali
+    // Reset isi Form
     formAspirasi.reset();
+
+    // Scroll ke paling atas otomatis
+    aspirasiContainer.scrollTop = 0;
   });
 });
