@@ -1772,10 +1772,11 @@ body {
 /* ==========================================
    2. SECTION MARI TERHUBUNG DENGAN KAMI
    ========================================== */
-.contact-section {
+
+  .contact-section {
   width: 100% !important;
-  max-width: 1500px !important; /* Dibuat 1500px agar proporsional */
-  margin: 0 auto !important;     /* Menjaga seluruh section tetap presisi di tengah */
+  max-width: 1500px !important;
+  margin: 0 auto !important;
   padding: 100px 40px 60px 40px !important;
   text-align: center;
   box-sizing: border-box;
@@ -1790,7 +1791,7 @@ body {
   font-weight: 800;
   font-size: 13px !important;
   letter-spacing: 2px;
-  margin-top: 0 !important; /* Margin top di-reset karena sudah ditangani padding section */
+  margin-top: 0 !important;
   margin-bottom: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   border: 1px solid #b8c7d9;
@@ -1798,7 +1799,7 @@ body {
 
 /* Judul & Deskripsi */
 .section-title {
-  font-size: 52px !important; /* Judul diperbesar */
+  font-size: 52px !important;
   font-weight: 800;
   color: #0b2545;
   margin: 0 0 14px 0;
@@ -1806,7 +1807,7 @@ body {
 
 .section-subtitle {
   color: #555555;
-  font-size: 22px !important; /* Subtitle diperbesar */
+  font-size: 22px !important;
   line-height: 1.6;
   margin: 0 0 50px 0;
 }
@@ -1817,14 +1818,14 @@ body {
   flex-direction: row !important;
   gap: 35px !important;
   text-align: left;
-  align-items: stretch;
+  align-items: stretch !important;
   width: 100% !important;
   box-sizing: border-box;
 }
 
 /* Kolom Kiri: Kartu Info & Medsos */
 .contact-info-list {
-  flex: 1.2 !important;
+  flex: 1 !important; /* Dibuat 1 agar seimbang dengan maps */
   display: flex;
   flex-direction: column;
   gap: 18px !important;
@@ -1834,7 +1835,7 @@ body {
 .info-card {
   background: #ffffff;
   border-radius: 30px;
-  padding: 28px 32px !important; /* Card dibuat lebih tebal */
+  padding: 28px 32px !important;
   display: flex;
   align-items: center;
   gap: 24px !important;
@@ -1842,7 +1843,7 @@ body {
 }
 
 .info-card .icon-box {
-  font-size: 40px !important; /* Ukuran icon diperbesar */
+  font-size: 40px !important;
   color: #0b2545;
   width: 65px !important;
   height: 65px !important;
@@ -1854,14 +1855,14 @@ body {
 
 .info-text h3 {
   margin: 0;
-  font-size: 24px !important; /* Judul info diperbesar */
+  font-size: 24px !important;
   color: #0b2545;
   font-weight: 800;
 }
 
 .info-text p {
   margin: 6px 0 0 0;
-  font-size: 18px !important; /* Teks isi alamat/jam kerja diperbesar */
+  font-size: 18px !important;
   color: #444444;
   line-height: 1.5;
 }
@@ -1876,7 +1877,7 @@ body {
 }
 
 .social-card h3 {
-  font-size: 22px !important; /* Judul medsos diperbesar */
+  font-size: 22px !important;
   margin: 0 0 18px 0;
   color: #0b2545;
   font-weight: 800;
@@ -1890,7 +1891,7 @@ body {
 }
 
 .soc-box {
-  width: 75px !important; /* Tombol icon medsos diperbesar */
+  width: 75px !important;
   height: 55px !important;
   background-color: #0b2545;
   border-radius: 16px;
@@ -1914,24 +1915,24 @@ body {
 .soc-box.fb i { color: #1877f2; }
 .soc-box.tw i { color: #ffffff; }
 
-//* KOLOM KANAN (CONTAINER MAPS) */
+/* KOLOM KANAN (CONTAINER MAPS) */
 .map-container {
-  flex: 1.3 !important; /* Dibuat 1.3 biar maps melar lebih lebar ke kanan */
+  flex: 1.2 !important; /* Maps sedikit lebih lebar */
+  min-width: 450px !important; /* Mencegah maps terhimpit atau menciut */
   background: #ffffff;
   border-radius: 25px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  display: flex !important; /* Menghilangkan sela/spasi kosong */
-  height: 100% !important;
+  display: flex !important;
 }
 
 /* IFRAME GOOGLE MAPS */
 .map-container iframe {
   width: 100% !important;
   height: 100% !important;
-  min-height: 100% !important;
+  min-height: 450px !important;
   border: 0 !important;
-  display: block !important; /* Wajib diset block agar ruang putih di bawah hilang */
+  display: block !important;
 }
 
 /* Responsive Tampilan HP / Tablet */
@@ -1941,16 +1942,17 @@ body {
   }
   
   .map-container {
+    min-width: 100% !important;
     min-height: 380px !important;
   }
 }
 
 
 /* SECTION ASPIRASI */
-/* SECTION ASPIRASI (FULL 1 LAYAR & LEBIH TINGGI) */
 .aspirasi-section {
   width: 100% !important;
   max-width: 1500px !important;
+  margin: 0 auto !important; /* Penambahan margin auto agar posisinya di tengah */
   padding: 100px 40px 150px 40px !important;
   box-sizing: border-box;
 }
@@ -1961,7 +1963,7 @@ body {
   letter-spacing: 12px;
   font-size: 50px;
   font-weight: 800;
-  margin-bottom: 30px !important; /* Jarak judul ke garis diperjauh biar tidak dekat */
+  margin-bottom: 30px !important;
 }
 
 .aspirasi-divider {
@@ -1969,7 +1971,7 @@ body {
   height: 4px;
   background-color: #8da9c4;
   border-radius: 2px;
-  margin-bottom: 45px !important; /* Jarak garis ke kartu di bawahnya */
+  margin-bottom: 45px !important;
 }
 
 .aspirasi-wrapper {
@@ -1981,7 +1983,7 @@ body {
 
 /* KARTU FORM (KIRI) */
 .aspirasi-card {
-  flex: 1 !important; /* Lebar disamain 1:1 dengan bagian kanan */
+  flex: 1 !important;
   background: #ffffff;
   border-radius: 25px;
   padding: 35px;
@@ -2038,9 +2040,9 @@ body {
   background-color: #134074;
 }
 
-/* KARTU ASPIRASI TERBARU (KANAN - LEBAR DISAMAIN SAMA KIRI) */
+/* KARTU ASPIRASI TERBARU (KANAN) */
 .aspirasi-card.display-box {
-  flex: 1 !important; /* Diubah dari 1.5 ke 1 biar lebarnya tidak kepanjangan */
+  flex: 1 !important;
   padding: 40px;
   box-sizing: border-box;
 }
