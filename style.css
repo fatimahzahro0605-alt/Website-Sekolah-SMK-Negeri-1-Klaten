@@ -1941,17 +1941,17 @@ body {
 
 /* SECTION ASPIRASI */
 .aspirasi-section {
-  padding: 60px 40px;
-  width: 95%;
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 100% !important;
+  max-width: 100% !important; /* Hapus pembatas lebar */
+  padding: 60px 5%;          /* Beri jarak aman 5% di ujung layar */
+  box-sizing: border-box;
 }
 
 .aspirasi-title {
   text-align: center;
   color: #0b2545;
   letter-spacing: 12px;
-  font-size: 32px;
+  font-size: 45px;
   font-weight: 800;
   margin-bottom: 10px;
 }
@@ -1966,7 +1966,7 @@ body {
 
 .aspirasi-wrapper {
   display: flex;
-  gap: 30px;
+  gap: 35px;
   width: 100%;
 }
 
@@ -1975,7 +1975,7 @@ body {
   flex: 1;
   background: #ffffff;
   border-radius: 25px;
-  padding: 30px;
+  padding: 35px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
@@ -2038,7 +2038,7 @@ body {
 
 /* SCROLLBAR AREA */
 .aspirasi-list {
-  max-height: 380px;
+  max-height: 480px;
   overflow-y: auto;
   padding-right: 10px;
   display: flex;
