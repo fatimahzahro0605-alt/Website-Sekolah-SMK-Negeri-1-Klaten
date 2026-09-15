@@ -247,6 +247,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const formAspirasi = document.getElementById('formAspirasi');
   const aspirasiContainer = document.getElementById('aspirasiContainer');
 
+  // 1. Fungsi buat nampilin item ke HTML
+  function tampilkanAspirasiKeUI(nama, tanggal, pesan) {
+    const itemBaru = document.createElement('div');
+    itemBaru.classList.add('aspirasi-item');
+
+    itemBaru.innerHTML = `
+      <div class="user-info">
+        <i class="fa-solid fa-circle-user avatar"></i>
+        <div class="user-meta">
+          <div class="user-identity">
+            <strong>${nama}</strong>
+          </div>
+          <span class="date">${tanggal}</span>
+        </div>
+      </div>
+      <div class="bubble-pesan">${pesan}</div>
+    `;
+
+    // Selalu taruh di paling atas
+    aspirasiContainer.prepend(itemBaru);
+  }
+
+  // 2. Load data tersimpan saat web pertama kali dibuka/di-refresh
+  function muatAspirasiTersimpan() {
+    const dataTersimpan = JSON.parse(localStorage.getItem('daftarAspirasi')) || [];
+    aspirasiContainer.innerHTML = ''; // Bersihkan container
+
+    dataTersimpan.forEach(item => {
+      tampilkanAspirasiKeUI(item.nama, item.tanggal, item.pesan);
+    });
+  }
+
+  // 3. Event handler saat form dikirim
   formAspirasi.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -257,35 +290,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Logika nama jika kosong / diisi
     const namaTampil = namaInput !== "" ? namaInput : "Anonim";
 
-    // Format Tanggal Otomatis (Contoh: 15 September 2026)
+    // Format Tanggal Otomatis
     const hariIni = new Date();
     const opsiTanggal = { day: 'numeric', month: 'long', year: 'numeric' };
     const tanggalTampil = hariIni.toLocaleDateString('id-ID', opsiTanggal);
 
-    // Buat Elemen Aspirasi Baru
-    const itemBaru = document.createElement('div');
-    itemBaru.classList.add('aspirasi-item');
+    // Tampilkan di UI
+    tampilkanAspirasiKeUI(namaTampil, tanggalTampil, pesanInput);
 
-    itemBaru.innerHTML = `
-      <div class="user-info">
-        <i class="fa-solid fa-circle-user avatar"></i>
-        <div class="user-meta">
-          <div class="user-identity">
-            <strong>${namaTampil}</strong>
-          </div>
-          <span class="date">${tanggalTampil}</span>
-        </div>
-      </div>
-      <div class="bubble-pesan">${pesanInput}</div>
-    `;
+    // Simpan ke localStorage
+    const dataTersimpan = JSON.parse(localStorage.getItem('daftarAspirasi')) || [];
+    dataTersimpan.push({
+      nama: namaTampil,
+      tanggal: tanggalTampil,
+      pesan: pesanInput
+    });
+    localStorage.setItem('daftarAspirasi', JSON.stringify(dataTersimpan));
 
-    // Masukkan ke Paling Atas (Terbaru ke Terlama)
-    aspirasiContainer.prepend(itemBaru);
-
-    // Reset isi Form
+    // Reset isi Form & Scroll ke atas
     formAspirasi.reset();
-
-    // Scroll ke paling atas otomatis
     aspirasiContainer.scrollTop = 0;
   });
+
+  // Jalankan pembacaan data tersimpan
+  muatAspirasiTersimpan();
 });
