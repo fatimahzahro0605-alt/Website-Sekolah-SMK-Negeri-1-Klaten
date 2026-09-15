@@ -1921,23 +1921,28 @@ body {
 .soc-box.tw i { color: #ffffff; }
 
 /* KOLOM KANAN (CONTAINER MAPS) */
+/* CONTAINER MAPS */
 .map-container {
   flex: 1 !important;
   background: #ffffff;
   border-radius: 30px;
-  overflow: hidden;
+  overflow: hidden !important; /* Mencegah iframe meluber keluar */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  margin-left: 20px !important; /* Menambah margin kiri 20px supaya maps bergeser ke kanan */
+  margin-left: 20px !important;
   box-sizing: border-box;
+  position: relative !important;
+  width: 100% !important;
+  min-height: 520px !important; /* Memberikan tinggi pas */
 }
 
-/* IFRAME MAPS */
+/* IFRAME GOOGLE MAPS */
 .map-container iframe {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  flex: 1 !important;
   border: 0 !important;
-  display: block !important;
 }
 </div>
 /* Responsive Tampilan HP / Tablet */
