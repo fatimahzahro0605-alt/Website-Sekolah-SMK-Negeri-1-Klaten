@@ -107,40 +107,41 @@
 </section>
 
   <!-- SECTION ASPIRASI -->
-  <section class="aspirasi-section">
-    <h1 class="aspirasi-title">A S P I R A S I</h1>
-    <div class="aspirasi-divider"></div>
+  <!-- SECTION ASPIRASI -->
+<section class="aspirasi-section">
+  <h1 class="aspirasi-title">A S P I R A S I</h1>
+  <div class="aspirasi-divider"></div>
 
-    <div class="aspirasi-wrapper">
-      <!-- FORM KIRIM ASPIRASI (KIRI) -->
-      <div class="aspirasi-card">
-        <form id="formAspirasi">
-          <div class="input-group">
-            <label for="nama">Nama Lengkap</label>
-            <input type="text" id="nama" required />
-          </div>
+  <div class="aspirasi-wrapper">
+    <!-- FORM KIRIM ASPIRASI (KIRI) -->
+    <div class="aspirasi-card">
+      <form id="formAspirasi">
+        <div class="input-group">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" />
+        </div>
 
-          <div class="input-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" required />
-          </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
 
-          <div class="input-group">
-            <label for="pesan">Aspirasi</label>
-            <textarea id="pesan" rows="5" required></textarea>
-          </div>
+        <div class="input-group">
+          <label for="pesan">Aspirasi</label>
+          <textarea id="pesan" rows="5" required></textarea>
+        </div>
 
-          <button type="submit" class="btn-kirim">Kirim Aspirasi</button>
-        </form>
-      </div>
-
-      <!-- DAFTAR ASPIRASI TERBARU (KANAN) -->
-      <div class="aspirasi-card display-box">
-        <h2>Aspirasi Terbaru</h2>
-        <div class="aspirasi-list" id="aspirasiContainer">
-      </div>
+        <button type="submit" class="btn-kirim">Kirim Aspirasi</button>
+      </form>
     </div>
-  </section>
+
+    <!-- DAFTAR ASPIRASI TERBARU (KANAN) -->
+    <div class="aspirasi-card display-box">
+      <h2>Aspirasi Terbaru</h2>
+      <div class="aspirasi-list" id="aspirasiContainer"></div>
+    </div>
+  </div>
+</section>
 
   <!-- JS Terpisah -->
   <script src="script.js"></script>
