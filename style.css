@@ -1940,10 +1940,11 @@ body {
 }
 
 /* SECTION ASPIRASI */
+/* SECTION ASPIRASI (FULL 1 LAYAR & LEBIH TINGGI) */
 .aspirasi-section {
   width: 100% !important;
-  max-width: 100% !important; /* Hapus pembatas lebar */
-  padding: 60px 5%;          /* Beri jarak aman 5% di ujung layar */
+  max-width: 100% !important;
+  padding: 90px 5% 110px 5% !important; /* Tambah jarak atas & bawah */
   box-sizing: border-box;
 }
 
@@ -1953,7 +1954,7 @@ body {
   letter-spacing: 12px;
   font-size: 45px;
   font-weight: 800;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .aspirasi-divider {
@@ -1966,22 +1967,22 @@ body {
 
 .aspirasi-wrapper {
   display: flex;
-  gap: 35px;
+  gap: 40px;
   width: 100%;
 }
 
-/* KARTU KIRI & KANAN */
+/* KARTU FORM (KIRI) */
 .aspirasi-card {
   flex: 1;
   background: #ffffff;
   border-radius: 25px;
-  padding: 35px;
+  padding: 40px; /* Padding dalam kartu diperbesar */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* FORM STYLING */
+/* LABEL & INPUT FORM (DIPERBESAR) */
 .input-group {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   display: flex;
   flex-direction: column;
 }
@@ -1989,17 +1990,17 @@ body {
 .input-group label {
   font-weight: 700;
   color: #0b2545;
-  margin-bottom: 8px;
-  font-size: 15px;
+  margin-bottom: 10px;
+  font-size: 18px !important; /* Label Nama, Email, Aspirasi */
 }
 
 .input-group input,
 .input-group textarea {
   width: 100%;
-  padding: 12px 18px;
-  border: 1.5px solid #0b2545;
+  padding: 16px 20px !important; /* Kotak input diperbesar */
+  border: 2px solid #0b2545;
   border-radius: 18px;
-  font-size: 14px;
+  font-size: 16px !important; /* Teks ketikan diperbesar */
   outline: none;
   box-sizing: border-box;
 }
@@ -2010,14 +2011,15 @@ body {
   box-shadow: 0 0 5px rgba(19, 64, 116, 0.3);
 }
 
+/* TOMBOL KIRIM (DIPERBESAR) */
 .btn-kirim {
   width: 100%;
-  padding: 14px;
+  padding: 18px !important;
   background-color: #0b2545;
   color: white;
   border: none;
   border-radius: 20px;
-  font-size: 16px;
+  font-size: 18px !important;
   font-weight: 700;
   cursor: pointer;
   transition: background 0.3s;
@@ -2027,28 +2029,32 @@ body {
   background-color: #134074;
 }
 
-/* DAFTAR ASPIRASI (KANAN) */
+/* KARTU ASPIRASI TERBARU (KANAN - DIBUAT LEBIH LEBAR) */
+.aspirasi-card.display-box {
+  flex: 1.5 !important; /* Kotak kanan lebih mekar ke kanan */
+  padding: 40px;
+}
+
 .display-box h2 {
   color: #0b2545;
-  font-size: 20px;
+  font-size: 24px !important; /* Judul "Aspirasi Terbaru" */
   margin-top: 0;
-  margin-bottom: 20px;
-  font-weight: 700;
+  margin-bottom: 25px;
+  font-weight: 800;
 }
 
-/* SCROLLBAR AREA */
+/* SCROLLBAR & LIST */
 .aspirasi-list {
-  max-height: 480px;
+  max-height: 520px !important; /* Area scroll dipertinggi */
   overflow-y: auto;
-  padding-right: 10px;
+  padding-right: 12px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
-/* Kustomisasi Scrollbar halus */
 .aspirasi-list::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 .aspirasi-list::-webkit-scrollbar-thumb {
@@ -2056,21 +2062,21 @@ body {
   border-radius: 10px;
 }
 
-/* ITEM ASPIRASI */
+/* ITEM PESAN TERKIRIM (DIPERBESAR) */
 .aspirasi-item {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .user-info {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .avatar {
-  font-size: 38px;
+  font-size: 46px !important; /* Icon profil lebih gede */
   color: #0b2545;
 }
 
@@ -2082,24 +2088,24 @@ body {
 }
 
 .user-identity strong {
-  font-size: 16px;
+  font-size: 19px !important; /* Teks nama pengirim */
   color: #0b2545;
 }
 
 .date {
-  font-size: 12px;
-  color: #888888;
+  font-size: 14px !important; /* Teks tanggal */
+  color: #666666;
 }
 
-/* BUBBLE PESAN */
 .bubble-pesan {
-  background-color: #d9d9d9;
-  color: #333333;
-  padding: 12px 18px;
-  border-radius: 15px;
-  font-size: 14px;
-  margin-left: 50px; /* Sejajar dengan teks nama di samping avatar */
-  line-height: 1.4;
+  background-color: #e2e8f0;
+  color: #1e293b;
+  padding: 16px 22px !important; /* Bubble chat lebih tebal */
+  border-radius: 18px;
+  font-size: 17px !important; /* Teks isi aspirasi lebih besar & jelas */
+  margin-left: 60px;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
 /* ==========================================
