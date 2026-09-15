@@ -1818,19 +1818,19 @@ body {
   flex-direction: row !important;
   gap: 35px !important;
   text-align: left;
-  align-items: stretch !important;
+  align-items: stretch !important; /* Tingginya disamakan otomatis */
   width: 100% !important;
   box-sizing: border-box;
 }
-
 /* Kolom Kiri: Kartu Info & Medsos */
 .contact-info-list {
-  flex: 1 !important; /* Dibuat 1 agar seimbang dengan maps */
+  flex: 1 !important; /* Dibuat 1:1 biar nggak memakan tempat maps */
+  width: 50% !important;
   display: flex;
   flex-direction: column;
   gap: 18px !important;
+  box-sizing: border-box;
 }
-
 /* Kartu Info (Alamat, Jam Kerja, Email) */
 .info-card {
   background: #ffffff;
@@ -1917,24 +1917,24 @@ body {
 
 /* KOLOM KANAN (CONTAINER MAPS) */
 .map-container {
-  flex: 1.2 !important; /* Maps sedikit lebih lebar */
-  min-width: 450px !important; /* Mencegah maps terhimpit atau menciut */
+  flex: 1 !important; /* Lebar seimbang 50% */
+  width: 50% !important;
   background: #ffffff;
-  border-radius: 25px;
+  border-radius: 30px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  display: flex !important;
+  position: relative;
+  box-sizing: border-box;
 }
 
 /* IFRAME GOOGLE MAPS */
 .map-container iframe {
   width: 100% !important;
   height: 100% !important;
-  min-height: 450px !important;
+  min-height: 100% !important;
   border: 0 !important;
   display: block !important;
 }
-
 /* Responsive Tampilan HP / Tablet */
 @media (max-width: 900px) {
   .contact-wrapper {
