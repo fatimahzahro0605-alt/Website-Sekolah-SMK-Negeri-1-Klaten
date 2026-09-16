@@ -2947,188 +2947,155 @@ body::-webkit-scrollbar {
 
 /* UNTUK LAYAR HP */
 /* ALL-IN-ONE RESPONSIVE MOBILE FIX (HP) */
-/* ALL-IN-ONE RESPONSIVE MOBILE FIX (HP) */
 @media (max-width: 768px) {
 
-  /* 1. LAYOUT GLOBAL */
-  body, html, main, .hero, section {
+  /* 1. LAYOUT GLOBAL & JARAK AMAN NAVBAR */
+  body {
+    padding-top: 100px !important; /* Mencegah judul ketutupan navbar */
+    overflow-x: hidden !important;
+  }
+
+  html, main, .hero, section {
     overflow-x: hidden !important;
     height: auto !important;
   }
 
-  /* 2. HEADER & NAVBAR (Fix Scroll Menu) */
-  header, nav, .navbar, .navbar-container {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    padding: 10px 12px !important;
-    gap: 8px !important;
+  /* 2. NAVBAR DI HP (Ramping & Informasi Kegiatan 1 Baris) */
+  header, nav, .navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
     width: 100% !important;
+    z-index: 9999 !important;
+    padding: 6px 10px !important;
     box-sizing: border-box !important;
-    overflow: visible !important;
   }
 
-  .logo, .navbar-brand {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 8px !important;
+  /* Sembunyikan teks logo yang kepanjangan khusus di HP biar menu ringkas */
+  .logo h1, .navbar-brand h1, .brand-text p {
+    display: none !important;
   }
 
   .logo img, .navbar-brand img {
-    height: 32px !important;
+    height: 28px !important;
     width: auto !important;
   }
 
-  .logo h1, .logo span, .brand-text, .navbar-brand h1 {
-    font-size: 14px !important;
-    line-height: 1.2 !important;
-  }
-
-  /* MENU NAVBAR (Dapat Digeser) */
+  /* Menu dapat digeser ke samping & 1 baris utuh */
   .nav-links, .navbar-nav, .menu, .menu-list, ul.nav-list, ul {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
-    justify-content: flex-start !important;
     align-items: center !important;
     width: 100% !important;
-    max-width: 100vw !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
-    gap: 15px !important;
-    padding: 6px 5px !important;
+    gap: 12px !important;
+    padding: 4px 0 !important;
     margin: 0 !important;
     list-style: none !important;
+    white-space: nowrap !important;
     -webkit-overflow-scrolling: touch !important;
-    touch-action: pan-x !important;
   }
 
   .nav-links::-webkit-scrollbar, 
   .navbar-nav::-webkit-scrollbar, 
-  .menu::-webkit-scrollbar, 
-  .menu-list::-webkit-scrollbar,
   ul::-webkit-scrollbar {
     display: none !important;
-    height: 0 !important;
   }
 
-  .nav-links li, .navbar-nav li, .menu li, .menu-list li,
-  .nav-links a, .navbar-nav a, .menu a, .menu-list a {
-    display: inline-block !important;
-    flex-shrink: 0 !important;
-    font-size: 13px !important;
-    white-space: nowrap !important;
-  }
-
-  .nav-links a, .navbar-nav a, .menu a, .menu-list a {
+  .nav-links a, .navbar-nav a, .menu a, ul a {
+    font-size: 12px !important;
     padding: 4px 6px !important;
+    white-space: nowrap !important; /* Kunci biar teks gak turun ke baris 2 */
+    flex-shrink: 0 !important;
   }
 
-  /* 3. HERO SECTION (HANYA HEADER DEPAN YANG DIUBAH) */
-  /* "Selamat Datang di" -> Dikecilkan tapi Tetap BOLD */
-  .hero h2, .hero .welcome-text {
-    font-size: 14px !important;
+  /* 3. HERO SECTION (Teks Depan) */
+  .hero h2, .welcome-text {
+    font-size: 13px !important;
     font-weight: 700 !important;
     margin-bottom: 4px !important;
   }
 
-  /* "SMK NEGERI 1 KLATEN" -> Paling Dominan & Paling Besar */
-  .hero h1, .hero .hero-title {
-    font-size: 24px !important;
+  .hero h1, .hero-title {
+    font-size: 22px !important;
     font-weight: 800 !important;
     line-height: 1.2 !important;
     margin: 6px 0 !important;
-    color: #ffffff !important;
   }
 
-  /* Tulisan Kuning "Unggul, Berkarya..." -> Lebih Kecil dari SMK tapi Tetap BOLD */
-  .hero h3, .hero .hero-subtitle, .hero .yellow-text {
-    font-size: 15px !important;
+  .hero h3, .hero-subtitle, .yellow-text {
+    font-size: 14px !important;
     font-weight: 700 !important;
-    line-height: 1.3 !important;
-    margin-top: 6px !important;
-    margin-bottom: 12px !important;
+    margin-top: 4px !important;
+    margin-bottom: 10px !important;
   }
 
-  .hero p, .hero-description {
-    font-size: 11px !important;
-    line-height: 1.4 !important;
-    padding: 0 10px !important;
+  /* 4. FIX KARTU (1/2 Kolom, Full Frame, Tidak Kepotong) */
+  .card-container, .jurusan-container, .keunggulan-container, .grid-container {
+    display: flex !important;
+    flex-direction: column !important; /* Susun 1-1 ke bawah biar muat & lega */
+    align-items: center !important;
+    width: 100% !important;
+    padding: 0 15px !important;
+    gap: 16px !important;
+    box-sizing: border-box !important;
   }
 
-  .hero-logo, .hero img {
-    max-width: 130px !important;
-    height: auto !important;
-    margin: 10px auto !important;
-  }
-
-  /* 4. FIX KARTU STATISTIK (Dibuat Grid 2 Atas - 2 Bawah) */
-  .stats-container, .statistics-grid, .card-wrapper, .hero-cards {
+  /* Kartu Statistik / Keunggulan Kecil (2 Kolom berdampingan) */
+  .stats-container, .statistics-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
-    padding: 0 15px !important;
+    gap: 10px !important;
     width: 100% !important;
+    padding: 0 15px !important;
     box-sizing: border-box !important;
-    overflow-x: visible !important;
   }
 
-  .stats-card, .stat-card, .card {
+  .card, .stat-card, .keunggulan-card, .jurusan-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+  }
+
+  .card img, .jurusan-card img, .keunggulan-card img {
     width: 100% !important;
     height: auto !important;
-    padding: 15px 10px !important;
-    box-sizing: border-box !important;
+    max-height: 200px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
   }
 
-  .stats-card img, .stat-card img, .stats-card .icon {
-    width: 36px !important;
-    height: 36px !important;
-    margin-bottom: 6px !important;
+  /* 5. KUNCI SEMUA JUDUL AGAR TETAP BOLD & KONSISTEN */
+  .section-title, 
+  section h2, 
+  main h2, 
+  .keunggulan-title, 
+  .about-section h2 {
+    font-size: 20px !important;
+    font-weight: 800 !important; /* Ditebalkan BOLD */
+    line-height: 1.3 !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+    text-align: left !important;
   }
 
-  .stats-card h3, .stat-card h3 {
-    font-size: 18px !important;
-    margin: 4px 0 !important;
+  .card h3, .stat-card h3, .keunggulan-card h3 {
+    font-size: 16px !important;
+    font-weight: 800 !important; /* Judul dalam kartu tetap BOLD */
+    margin: 6px 0 !important;
   }
 
-  .stats-card p, .stat-card p {
-    font-size: 12px !important;
-    line-height: 1.2 !important;
+  /* 6. FIX SECTION TENTANG KAMI */
+  .about-section, #about {
+    padding: 15px !important;
   }
 
-  /* 5. FIX SECTION TENTANG KAMI (Jarak Gambar ke Teks Dipangkas) */
-  .about-section, #about, .tentang-kami {
-    padding-top: 15px !important;
-    padding-bottom: 15px !important;
-    min-height: auto !important;
-  }
-
-  .about-container, .about-wrapper {
+  .about-container {
     display: flex !important;
     flex-direction: column !important;
-    gap: 10px !important;
-    padding: 0 15px !important;
-  }
-
-  .about-img, .about-image, .about-section img {
-    width: 100% !important;
-    height: auto !important;
-    max-height: 250px !important;
-    object-fit: cover !important;
-    margin-bottom: 5px !important;
-  }
-
-  .about-text, .about-description, .about-text p {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    font-size: 13px !important;
-    line-height: 1.5 !important;
-  }
-
-  /* Judul "Tentang Kami" Tetap Normal/Besar */
-  .section-title, main h2, section h2:not(.hero h2) {
-    font-size: 22px !important;
-    font-weight: 700 !important;
+    gap: 12px !important;
   }
 }
