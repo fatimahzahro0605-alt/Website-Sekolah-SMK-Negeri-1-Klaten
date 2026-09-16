@@ -2947,7 +2947,6 @@ body::-webkit-scrollbar {
 
 /* UNTUK LAYAR HP */
 /* ALL-IN-ONE RESPONSIVE MOBILE FIX (HP) */
-/* ALL-IN-ONE RESPONSIVE MOBILE FIX (HP) */
 @media (max-width: 768px) {
 
   /* 1. LAYOUT GLOBAL */
@@ -2956,28 +2955,27 @@ body::-webkit-scrollbar {
     height: auto !important;
   }
 
-  /* 2. HEADER & NAVBAR CONTAINER */
+  /* 2. HEADER & NAVBAR (Buka Akses Scroll) */
   header, nav, .navbar, .navbar-container {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    padding: 10px 12px !important;
+    padding: 10px 15px !important;
     gap: 8px !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    overflow: visible !important;
+    overflow: visible !important; /* WAJIB: Biar menu ga kepotong */
   }
 
-  /* Logo & Nama Sekolah Header */
   .logo, .navbar-brand {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 10px !important;
   }
 
   .logo img, .navbar-brand img {
-    height: 32px !important;
+    height: 30px !important;
     width: auto !important;
   }
 
@@ -2986,32 +2984,30 @@ body::-webkit-scrollbar {
     line-height: 1.2 !important;
   }
 
-  .logo p, .navbar-brand p, .tagline {
-    font-size: 10px !important;
-  }
-
-  /* 3. MENU NAVBAR (Bisa Digeser & Teks 1 Baris) */
+  /* 3. PEMBUNGKUS MENU (PASTIKAN SEMUA TAG TERKENA BISA DIGESER) */
   .nav-links, .navbar-nav, .menu, .menu-list, ul.nav-list, ul {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important; /* Mencegah menu patah ke bawah */
+    flex-wrap: nowrap !important; /* Dilarang turun ke bawah */
     justify-content: flex-start !important;
     align-items: center !important;
     
     width: 100% !important;
     max-width: 100vw !important;
-    overflow-x: auto !important; /* Aktifkan scroll horizontal */
+    overflow-x: auto !important; /* Aktifkan scroll kanan-kiri */
     overflow-y: hidden !important;
+    white-space: nowrap !important;
     
-    gap: 15px !important;
-    padding: 6px 5px !important;
+    gap: 12px !important;
+    padding: 8px 5px !important;
     margin: 0 !important;
     list-style: none !important;
     
-    -webkit-overflow-scrolling: touch !important;
-    touch-action: pan-x !important;
+    -webkit-overflow-scrolling: touch !important; /* Scroll mulus di HP */
+    touch-action: pan-x !important; /* Kunci usapan jari ke samping */
   }
 
+  /* Sembunyikan garis scrollbar bawaan HP */
   .nav-links::-webkit-scrollbar, 
   .navbar-nav::-webkit-scrollbar, 
   .menu::-webkit-scrollbar, 
@@ -3021,60 +3017,20 @@ body::-webkit-scrollbar {
     height: 0 !important;
   }
 
-  /* Paksa teks menu tetap 1 baris & tidak gepeng */
+  /* KUNCI SUPAYA TEKS/LIST TIDAK MENGKERUT ATAU TURUN */
   .nav-links li, .navbar-nav li, .menu li, .menu-list li,
   .nav-links a, .navbar-nav a, .menu a, .menu-list a {
     display: inline-block !important;
-    flex-shrink: 0 !important;
+    flex-shrink: 0 !important; /* WAJIB: Mencegah teks kepotong/gepeng */
     font-size: 13px !important;
-    white-space: nowrap !important; /* KUNCI: Biar 'Informasi kegiatan' tidak patah 2 baris */
+    white-space: nowrap !important;
   }
 
   .nav-links a, .navbar-nav a, .menu a, .menu-list a {
-    padding: 4px 6px !important;
+    padding: 6px 12px !important;
   }
 
-  /* 4. TULISAN HERO SECTION (Sesuai Permintaan) */
-  /* "Selamat Datang di" (Dikecilkan) */
-  .hero h2, .hero p.welcome, .welcome-text, h2 {
-    font-size: 14px !important;
-    font-weight: normal !important;
-    margin-bottom: 4px !important;
-  }
-
-  /* "SMK NEGERI 1 KLATEN" (Ditegaskan / Diberat) */
-  .hero h1, .hero-title, .main-title, h1 {
-    font-size: 22px !important;
-    font-weight: 800 !important; /* Ditegaskan / ditebalkan */
-    line-height: 1.2 !important;
-    margin: 6px 0 !important;
-    color: #ffffff !important;
-  }
-
-  /* Tulisan Kuning "Unggul, Berkarya..." (Dikecilkan) */
-  .hero h3, .hero-subtitle, .yellow-text, .motto, h3 {
-    font-size: 13px !important; /* Dikecilkan dari ukuran raksasa */
-    font-weight: 600 !important;
-    line-height: 1.3 !important;
-    margin-top: 4px !important;
-    margin-bottom: 12px !important;
-  }
-
-  /* Paragraf Deskripsi di Bawah Judul */
-  .hero p, .hero-description {
-    font-size: 11px !important;
-    line-height: 1.4 !important;
-    padding: 0 10px !important;
-  }
-
-  /* Logo Besar di Tengah Hero */
-  .hero-logo, .hero img {
-    max-width: 130px !important; /* Disesuaikan agar proporsional di HP */
-    height: auto !important;
-    margin: 10px auto !important;
-  }
-
-  /* 5. FIX KARTU STATISTIK (2 Kolom) */
+  /* 4. FIX KARTU STATISTIK (1.700+ Siswa, dll) */
   .stats-container, .statistics-grid, .card-wrapper, .hero-cards {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
@@ -3086,20 +3042,59 @@ body::-webkit-scrollbar {
 
   .stats-card, .stat-card, .card {
     height: auto !important;
+    min-height: unset !important;
     padding: 12px 8px !important;
     border-radius: 12px !important;
   }
 
   .stats-card img, .stat-card img, .stats-card .icon {
-    width: 30px !important;
-    height: 30px !important;
+    width: 32px !important;
+    height: 32px !important;
+    margin-bottom: 5px !important;
   }
 
   .stats-card h3, .stat-card h3 {
     font-size: 16px !important;
+    margin: 2px 0 !important;
   }
 
   .stats-card p, .stat-card p {
     font-size: 11px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* 5. FIX TENTANG KAMI & GAMBAR KEPOTONG */
+  .about-section, #about, .tentang-kami {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    clear: both !important;
+  }
+
+  .about-container, .about-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 0 15px !important;
+  }
+
+  .about-img, .about-image, .about-section img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    border-radius: 10px !important;
+  }
+
+  .hero-title, .hero section h1, h1, .section-title, h2 {
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+    margin-top: 15px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .hero-subtitle, .hero section p, .hero p, .section-subtitle {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
   }
 }
