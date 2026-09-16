@@ -2945,111 +2945,89 @@ body::-webkit-scrollbar {
     display: none !important;
 }
 
-/* METATAG MEDIA QUERY UNTUK TAMPILAN HP */
+/* UNTUK LAYAR HP */
+/* ALL-IN-ONE RESPONSIVE MOBILE FIX (HP) */
 @media (max-width: 768px) {
-  /* Fix Header / Navbar */
-  .navbar, navbar-container, header {
+  /* 1. HEADER & NAVBAR (Menjaga Logo Tetap Kiri & Pas) */
+  header, nav, .navbar {
+    display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    padding: 15px 10px !important;
-    text-align: center !important;
+    align-items: flex-start !important; /* Biar logo tetap rata kiri, tidak ke tengah */
+    padding: 10px 15px !important;
+    gap: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box;
   }
 
-  /* Mengatur Logo agar Teksnya Pas di HP */
+  /* Logo & Nama Sekolah */
   .logo, .navbar-brand {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important; /* Tetap sejajar horizontal */
     align-items: center !important;
-  }
-
-  .logo img {
-    height: 40px !important;
-    margin-bottom: 5px;
-  }
-
-  .logo h1, .logo span, .brand-text {
-    font-size: 16px !important;
-    line-height: 1.2 !important;
-  }
-
-  /* Merapikan Menu Navigasi agar Tidak Menimpa Teks Logo */
-  .nav-links, .navbar-nav, .menu {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
     gap: 10px !important;
-    margin-top: 10px !important;
-  }
-
-  .nav-links a {
-    font-size: 13px !important;
-    padding: 4px 8px !important;
-  }
-
-  /* Fix Hero / Section Utama (Selamat Datang) */
-  .hero-title, .hero section h1 {
-    font-size: 28px !important; /* Mengecilkan teks "SMK NEGERI 1 KLATEN" yang membesar di HP */
-    line-height: 1.3 !important;
-  }
-
-  .hero-subtitle, .hero section p {
-    font-size: 14px !important;
-  }
-}
-
-/* RESPONSIVE MOBILE FIX (HP) */
-@media (max-width: 768px) {
-  /* Fix Header & Navbar */
-  header, nav, .navbar {
-    padding: 10px 15px !important;
-    flex-direction: column !important;
-    gap: 8px !important;
   }
 
   .logo img, .navbar-brand img {
-    height: 35px !important;
+    height: 32px !important; /* Dikecilkan pas untuk HP */
     width: auto !important;
   }
 
-  .nav-links, .menu-list {
+  .logo h1, .logo span, .brand-text, .navbar-brand h1 {
+    font-size: 15px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* 2. MENU NAVIGASI (Bisa Di-scroll Horizontal ke Kanan) */
+  .nav-links, .navbar-nav, .menu, .menu-list {
     display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 10px 15px !important;
-    padding: 5px 0 !important;
+    flex-wrap: nowrap !important; /* Dilarang turun ke bawah */
+    overflow-x: auto !important; /* Aktifkan scroll ke samping */
+    white-space: nowrap !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    width: 100% !important;
+    padding: 6px 0 !important;
+    margin: 0 !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Sembunyikan garis scrollbar biar bersih */
+  .nav-links::-webkit-scrollbar, .menu-list::-webkit-scrollbar {
+    display: none !important;
   }
 
   .nav-links a, .menu-list a {
     font-size: 13px !important;
+    padding: 4px 8px !important;
+    flex-shrink: 0 !important; /* Biar teks ga penyok */
   }
 
-  /* Fix Judul Raksasa di Hero Section */
-  .hero-title, h1 {
-    font-size: 28px !important; /* Dikecilkan dari ukuran besar */
-    line-height: 1.2 !important;
-    margin-top: 15px !important;
-    margin-bottom: 10px !important;
-    padding: 0 10px !important;
+  /* 3. HERO SECTION & JUDUL UTAMA */
+  .hero-title, .hero section h1, h1 {
+    font-size: 24px !important; /* Ukuran pas layar HP */
+    line-height: 1.25 !important;
+    margin-top: 10px !important;
+    margin-bottom: 8px !important;
   }
 
-  .hero-subtitle, .hero p {
-    font-size: 14px !important;
+  .hero-subtitle, .hero section p, .hero p {
+    font-size: 13px !important;
     line-height: 1.4 !important;
   }
 
-  /* Fix Spasi Section */
+  /* 4. SECTION KONTEN & SPASI */
   .contact-section {
-    padding-top: 100px !important;
+    padding-top: 90px !important;
     padding-left: 15px !important;
     padding-right: 15px !important;
   }
 
   .section-title {
-    font-size: 28px !important;
+    font-size: 24px !important;
   }
 
   .section-subtitle {
-    font-size: 15px !important;
-    margin-bottom: 25px !important;
+    font-size: 14px !important;
+    margin-bottom: 20px !important;
   }
 }
