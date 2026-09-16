@@ -2947,6 +2947,7 @@ body::-webkit-scrollbar {
 
 /* UNTUK LAYAR HP */
 /* ALL-IN-ONE RESPONSIVE MOBILE FIX (HP) */
+/* ALL-IN-ONE RESPONSIVE MOBILE FIX (HP) */
 @media (max-width: 768px) {
 
   /* 1. LAYOUT GLOBAL */
@@ -2955,27 +2956,27 @@ body::-webkit-scrollbar {
     height: auto !important;
   }
 
-  /* 2. HEADER & NAVBAR (Buka Akses Scroll) */
+  /* 2. HEADER & NAVBAR (Fix Scroll Menu) */
   header, nav, .navbar, .navbar-container {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    padding: 10px 15px !important;
+    padding: 10px 12px !important;
     gap: 8px !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    overflow: visible !important; /* WAJIB: Biar menu ga kepotong */
+    overflow: visible !important;
   }
 
   .logo, .navbar-brand {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 10px !important;
+    gap: 8px !important;
   }
 
   .logo img, .navbar-brand img {
-    height: 30px !important;
+    height: 32px !important;
     width: auto !important;
   }
 
@@ -2984,30 +2985,25 @@ body::-webkit-scrollbar {
     line-height: 1.2 !important;
   }
 
-  /* 3. PEMBUNGKUS MENU (PASTIKAN SEMUA TAG TERKENA BISA DIGESER) */
+  /* MENU NAVBAR (Dapat Digeser) */
   .nav-links, .navbar-nav, .menu, .menu-list, ul.nav-list, ul {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important; /* Dilarang turun ke bawah */
+    flex-wrap: nowrap !important;
     justify-content: flex-start !important;
     align-items: center !important;
-    
     width: 100% !important;
     max-width: 100vw !important;
-    overflow-x: auto !important; /* Aktifkan scroll kanan-kiri */
+    overflow-x: auto !important;
     overflow-y: hidden !important;
-    white-space: nowrap !important;
-    
-    gap: 12px !important;
-    padding: 8px 5px !important;
+    gap: 15px !important;
+    padding: 6px 5px !important;
     margin: 0 !important;
     list-style: none !important;
-    
-    -webkit-overflow-scrolling: touch !important; /* Scroll mulus di HP */
-    touch-action: pan-x !important; /* Kunci usapan jari ke samping */
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x !important;
   }
 
-  /* Sembunyikan garis scrollbar bawaan HP */
   .nav-links::-webkit-scrollbar, 
   .navbar-nav::-webkit-scrollbar, 
   .menu::-webkit-scrollbar, 
@@ -3017,84 +3013,122 @@ body::-webkit-scrollbar {
     height: 0 !important;
   }
 
-  /* KUNCI SUPAYA TEKS/LIST TIDAK MENGKERUT ATAU TURUN */
   .nav-links li, .navbar-nav li, .menu li, .menu-list li,
   .nav-links a, .navbar-nav a, .menu a, .menu-list a {
     display: inline-block !important;
-    flex-shrink: 0 !important; /* WAJIB: Mencegah teks kepotong/gepeng */
+    flex-shrink: 0 !important;
     font-size: 13px !important;
     white-space: nowrap !important;
   }
 
   .nav-links a, .navbar-nav a, .menu a, .menu-list a {
-    padding: 6px 12px !important;
+    padding: 4px 6px !important;
   }
 
-  /* 4. FIX KARTU STATISTIK (1.700+ Siswa, dll) */
+  /* 3. HERO SECTION (HANYA HEADER DEPAN YANG DIUBAH) */
+  /* "Selamat Datang di" -> Dikecilkan tapi Tetap BOLD */
+  .hero h2, .hero .welcome-text {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* "SMK NEGERI 1 KLATEN" -> Paling Dominan & Paling Besar */
+  .hero h1, .hero .hero-title {
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    margin: 6px 0 !important;
+    color: #ffffff !important;
+  }
+
+  /* Tulisan Kuning "Unggul, Berkarya..." -> Lebih Kecil dari SMK tapi Tetap BOLD */
+  .hero h3, .hero .hero-subtitle, .hero .yellow-text {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    margin-top: 6px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero p, .hero-description {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    padding: 0 10px !important;
+  }
+
+  .hero-logo, .hero img {
+    max-width: 130px !important;
+    height: auto !important;
+    margin: 10px auto !important;
+  }
+
+  /* 4. FIX KARTU STATISTIK (Dibuat Grid 2 Atas - 2 Bawah) */
   .stats-container, .statistics-grid, .card-wrapper, .hero-cards {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-    padding: 10px 15px !important;
+    gap: 12px !important;
+    padding: 0 15px !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    overflow-x: visible !important;
   }
 
   .stats-card, .stat-card, .card {
+    width: 100% !important;
     height: auto !important;
-    min-height: unset !important;
-    padding: 12px 8px !important;
-    border-radius: 12px !important;
+    padding: 15px 10px !important;
+    box-sizing: border-box !important;
   }
 
   .stats-card img, .stat-card img, .stats-card .icon {
-    width: 32px !important;
-    height: 32px !important;
-    margin-bottom: 5px !important;
+    width: 36px !important;
+    height: 36px !important;
+    margin-bottom: 6px !important;
   }
 
   .stats-card h3, .stat-card h3 {
-    font-size: 16px !important;
-    margin: 2px 0 !important;
+    font-size: 18px !important;
+    margin: 4px 0 !important;
   }
 
   .stats-card p, .stat-card p {
-    font-size: 11px !important;
+    font-size: 12px !important;
     line-height: 1.2 !important;
   }
 
-  /* 5. FIX TENTANG KAMI & GAMBAR KEPOTONG */
+  /* 5. FIX SECTION TENTANG KAMI (Jarak Gambar ke Teks Dipangkas) */
   .about-section, #about, .tentang-kami {
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
-    clear: both !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    min-height: auto !important;
   }
 
   .about-container, .about-wrapper {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    gap: 15px !important;
+    gap: 10px !important;
     padding: 0 15px !important;
   }
 
   .about-img, .about-image, .about-section img {
     width: 100% !important;
-    max-width: 100% !important;
     height: auto !important;
-    object-fit: contain !important;
-    border-radius: 10px !important;
+    max-height: 250px !important;
+    object-fit: cover !important;
+    margin-bottom: 5px !important;
   }
 
-  .hero-title, .hero section h1, h1, .section-title, h2 {
-    font-size: 22px !important;
-    line-height: 1.25 !important;
-    margin-top: 15px !important;
-    margin-bottom: 8px !important;
-  }
-
-  .hero-subtitle, .hero section p, .hero p, .section-subtitle {
+  .about-text, .about-description, .about-text p {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
     font-size: 13px !important;
-    line-height: 1.4 !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Judul "Tentang Kami" Tetap Normal/Besar */
+  .section-title, main h2, section h2:not(.hero h2) {
+    font-size: 22px !important;
+    font-weight: 700 !important;
   }
 }
