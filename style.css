@@ -3132,63 +3132,67 @@ body::-webkit-scrollbar {
     position: static !important;
   }
 
-/* FIX TOTAL STATISTIK: DI TENGAH & MELEBAR KE KANAN 1 BANJAR KE BAWAH */
-  .stats-container, .statistics-grid, .stats-wrapper, div[class*="stat"] {
-    display: flex !important;
-    flex-direction: column !important; /* Susun berjejer ke bawah */
-    align-items: center !important;     /* Bikin di tengah layar */
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 12px 0 !important;
-    box-sizing: border-box !important;
-    gap: 8px !important;                /* Jarak antar kotak */
-    position: relative !important;
-    clear: both !important;
-  }
+  /* FIX STATISTIK GRID 2x2 (PERSIS DESAIN CANVA) */
+.stats-container, .statistics-grid, .stats-wrapper, div[class*="stat"] {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important; /* 2 Kolom Sejajar */
+  gap: 12px !important;                              /* Jarak Antar Kotak */
+  width: 90% !important;
+  max-width: 360px !important;
+  margin: -40px auto 20px auto !important;           /* Naik sedikit menumpuk area Hero */
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 10 !important;
+  box-sizing: border-box !important;
+}
 
-  .stats-card, .stat-card, div[class*="stat"] > div {
-    /* PENTING: PAKSA MELEBAR KE KANAN & DI TENGAH */
-    width: 90% !important;              /* Bikin kotak melebar memenuhi 90% layar */
-    min-width: 90% !important;
-    max-width: 90% !important;
-    
-    height: auto !important;
-    min-height: 50px !important;         /* Tinggi ramping pas di HP */
-    padding: 8px 12px !important;
-    box-sizing: border-box !important;
-    margin: 0 auto !important;          /* Paksa posisi rata tengah */
-    
-    display: flex !important;
-    flex-direction: row !important;     /* Ikon di kiri, teks di kanan */
-    align-items: center !important;
-    justify-content: flex-start !important;
-    gap: 12px !important;
-    border-radius: 8px !important;
-  }
-
-  /* Ikon Statistik */
-  .stats-card img, .stat-card img, .stats-card i, div[class*="stat"] img {
-    width: 24px !important;
-    height: 24px !important;
-    min-width: 24px !important;
-    object-fit: contain !important;
-    margin: 0 !important;
-  }
-
-  /* Teks Angka (1.700+) & Deskripsi */
-  .stats-card h3, .stat-card h3, .stats-card .number, div[class*="stat"] h3 {
-    font-size: 14px !important;
-    font-weight: 800 !important;
-    margin: 0 !important;
-    white-space: nowrap !important;
-  }
-
-  .stats-card p, .stat-card p, div[class*="stat"] p {
-    font-size: 11px !important;
-    margin: 0 !important;
-    white-space: nowrap !important;
-  }
+/* KOTAK PERSEGI PUTIH */
+.stats-card, .stat-card, div[class*="stat"] > div {
+  background-color: #ffffff !important;
+  border-radius: 12px !important;                     /* Sudut Melengkung */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;/* Bayangan Halus */
+  padding: 16px 8px !important;
   
+  display: flex !important;
+  flex-direction: column !important;                  /* Ikon, Angka, Teks disusun ke bawah */
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  
+  width: 100% !important;
+  box-sizing: border-box !important;
+  min-height: 120px !important;                       /* Tinggi kotak pas proporsional */
+  margin: 0 !important;
+}
+
+/* IKON BIRU */
+.stats-card img, .stat-card img, .stats-card i, div[class*="stat"] img {
+  width: 36px !important;
+  height: 36px !important;
+  object-fit: contain !important;
+  margin-bottom: 8px !important;
+}
+
+/* TEKS ANGKA (1.700+, 99+) */
+.stats-card h3, .stat-card h3, .stats-card .number, div[class*="stat"] h3 {
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  color: #0d2b5c !important;                          /* Warna Biru Tua */
+  margin: 2px 0 !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+}
+
+/* TEKS KETERANGAN (Siswa, Guru & Karyawan) */
+.stats-card p, .stat-card p, div[class*="stat"] p {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: #555555 !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+}
+
   /* 5. KEUNGGULAN (KARD DIKECILIN AGAR RINGKAS) */
   .keunggulan-container, .services-grid, .card-container, .feature-grid, div[class*="keunggulan"] {
     display: grid !important;
