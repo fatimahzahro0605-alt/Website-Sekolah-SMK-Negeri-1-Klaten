@@ -3112,7 +3112,7 @@ body::-webkit-scrollbar {
     position: static !important;
   }
 
-  /* 4. STATISTIK 1700 SISWA (4 KE KANAN 1 BARIS, KOTAK PAS & GAMBAR KELIATAN) */
+ /* 4. STATISTIK 1700 SISWA (PROPORSIONAL, TINGGI PAS, TIDAK KECIL) */
   .stats-container, .statistics-grid, .stats-wrapper, div[class*="stat"] {
     display: flex !important;
     flex-direction: row !important;
@@ -3128,11 +3128,15 @@ body::-webkit-scrollbar {
 
   .stats-card, .stat-card, div[class*="stat"] > div {
     flex: 1 !important;
-    width: 20% !important;
+    width: 25% !important;
     max-width: 25% !important;
     min-width: 0 !important;
-    height: 50px!important;
-    padding: 4px 2px !important;
+    
+    /* UBAH DARI height: 50px JADI LEBIH TINGGI */
+    height: auto !important;
+    min-height: 75px !important; /* Ganti ke 80px/85px kalau mau tambah tinggi lagi */
+    
+    padding: 6px 3px !important;
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
@@ -3142,7 +3146,6 @@ body::-webkit-scrollbar {
     overflow: hidden !important;
     border-radius: 6px !important;
   }
-
   .stats-card img, .stat-card img, .stats-card i {
     width: 20px !important;
     height: 20px !important;
