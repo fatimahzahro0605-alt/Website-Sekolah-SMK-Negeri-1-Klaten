@@ -16,30 +16,29 @@
 <body>
 
   <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo-container">
-            <img src="logosekolah.png" alt="Logo SMK N 1 Klaten" class="logo-img">
-            <div class="brand-text">
-                <div class="brand-title">SMK NEGERI 1 KLATEN</div>
-                <div class="brand-tagline">Unggul, Berkarya, Berkarakter & Berdaya Saing</div>
-            </div>
-        </div>
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="logosekolah.png" alt="Logo SMK N 1 Klaten" class="logo-img">
+      <div class="brand-text">
+        <div class="brand-title">SMK NEGERI 1 KLATEN</div>
+        <div class="brand-tagline">Unggul, Berkarya, Berkarakter & Berdaya Saing</div>
+      </div>
     </div>
       
     <ul class="nav-menu">
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="profil.html">Profil</a></li>
-            <li><a href="informasi.html">Informasi kegiatan</a></li>
-            <li><a href="galery.html"">Galery</a></li>
-            <li><a href="kontak.html">Kontak</a></li>
-            <li>
-                <div class="search-box">
-                    <input type="text" placeholder="Cari...">
-                    <span class="search-icon">&#128065;</span>
-                </div>
-            </li>
-        </ul>
-    </nav>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="profil.html">Profil</a></li>
+      <li><a href="informasi.html">Informasi kegiatan</a></li>
+      <li><a href="galery.html">Galeri</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+      <li>
+        <div class="search-box">
+          <input type="text" placeholder="Cari...">
+          <span class="search-icon">&#128065;</span>
+        </div>
+      </li>
+    </ul>
+  </nav>
 
   <!-- SECTION MARI TERHUBUNG DENGAN KAMI -->
   <section class="contact-section">
@@ -50,7 +49,7 @@
     </p>
 
     <div class="contact-wrapper">
-      <!-- KOLOM KIRI: INFO KONTAK & 5 MEDSOS -->
+      <!-- KOLOM KIRI: INFO KONTAK & MEDSOS -->
       <div class="contact-info-list">
         
         <div class="info-card">
@@ -91,70 +90,60 @@
       </div>
 
       <!-- KOLOM KANAN: MAPS -->
-<div class="map-container">
-  <iframe 
-    src="https://maps.google.com/maps?q=SMK%20Negeri%201%20Klaten&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-    allowfullscreen="" 
-    loading="lazy">
-  </iframe>
+      <div class="map-container">
+        <iframe 
+          src="https://maps.google.com/maps?q=SMK%20Negeri%201%20Klaten&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
 
-  <!-- Tombol dimasukkan ke dalam map-container -->
-  <a href="https://www.google.com/maps/place/SMK+Negeri+1+Klaten/@-7.7347314,110.5927507,17z" target="_blank" class="btn-open-map">
-    <i class="fa-solid fa-map-location-dot"></i> Buka di Google Maps
-  </a>
-</div> <!-- Ini penutup map-container -->
-
-</div> <!-- Ini penutup contact-wrapper -->
-</section>
+        <a href="https://www.google.com/maps/place/SMK+Negeri+1+Klaten/@-7.7347314,110.5927507,17z" target="_blank" class="btn-open-map">
+          <i class="fa-solid fa-map-location-dot"></i> Buka di Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- SECTION ASPIRASI -->
-  <!-- SECTION ASPIRASI -->
-<section class="aspirasi-section">
-  <h1 class="aspirasi-title">A S P I R A S I</h1>
-  <div class="aspirasi-divider"></div>
+  <section class="aspirasi-section">
+    <h1 class="aspirasi-title">A S P I R A S I</h1>
+    <div class="aspirasi-divider"></div>
 
-  <div class="aspirasi-wrapper">
-    <!-- FORM KIRIM ASPIRASI (KIRI) -->
-    <div class="aspirasi-card">
-      <form id="formAspirasi">
-        <div class="input-group">
-          <label for="nama">Nama Lengkap</label>
-          <input type="text" id="nama" />
-        </div>
+    <div class="aspirasi-wrapper">
+      <!-- FORM KIRIM ASPIRASI (KIRI) -->
+      <div class="aspirasi-card">
+        <form id="formAspirasi">
+          <div class="input-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" required />
+          </div>
 
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" required />
-        </div>
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+          </div>
 
-        <div class="input-group">
-          <label for="pesan">Aspirasi</label>
-          <textarea id="pesan" rows="5" required></textarea>
-        </div>
+          <div class="input-group">
+            <label for="pesan">Aspirasi</label>
+            <textarea id="pesan" rows="5" required></textarea>
+          </div>
 
-        <button type="submit" class="btn-kirim">Kirim Aspirasi</button>
-      </form>
+          <button type="submit" class="btn-kirim" id="btnKirim">Kirim Aspirasi</button>
+        </form>
+      </div>
+
+      <!-- DAFTAR ASPIRASI TERBARU (KANAN) -->
+      <div class="aspirasi-card display-box">
+        <h2>Aspirasi Terbaru</h2>
+        <div class="aspirasi-list" id="aspirasiContainer"></div>
+      </div>
     </div>
+  </section>
 
-    <!-- DAFTAR ASPIRASI TERBARU (KANAN) -->
-    <div class="aspirasi-card display-box">
-      <h2>Aspirasi Terbaru</h2>
-      <div class="aspirasi-list" id="aspirasiContainer"></div>
-    </div>
-  </div>
-</section>
-
-  <!-- JS Terpisah -->
-  <script src="script.js"></script>
-</body>
-</html>
-<!-- ==========================================
-       3. FOOTER SECTION
-       ========================================== -->
+  <!-- FOOTER SECTION -->
   <footer class="footer-section">
     <div class="footer-container">
         
-      <!-- Kolom 1: Profil Singkat -->
       <div class="footer-col">
         <div class="footer-brand">
           <img src="logosekolah.png" alt="Logo SMK N 1 Klaten" class="footer-logo">
@@ -165,7 +154,6 @@
         </p>
       </div>
 
-      <!-- Kolom 2: Tautan Cepat -->
       <div class="footer-col">
         <h4>Tautan Cepat</h4>
         <ul class="footer-links">
@@ -177,7 +165,6 @@
         </ul>
       </div>
 
-      <!-- Kolom 3: Kontak Resmi -->
       <div class="footer-col" id="kontak">
         <h4>Hubungi Kami</h4>
         <ul class="contact-info">
@@ -190,10 +177,89 @@
 
     </div>
 
-    <!-- Copyright -->
     <div class="footer-bottom">
       <p>&copy; 2026 SMK Negeri 1 Klaten. All Rights Reserved.</p>
     </div>
   </footer>
 
- 
+  <!-- SCRIPT FIREBASE -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+    // Konfigurasi Firebase dari console milikmu[cite: 4]
+    const firebaseConfig = {
+      apiKey: "AIzaSyD3V1iQYRXbKoxefO-7x3grqqhRyrR6wwQk",
+      authDomain: "website-sekolah-dde65.firebaseapp.com",
+      projectId: "website-sekolah-dde65",
+      storageBucket: "website-sekolah-dde65.firebasestorage.app",
+      messagingSenderId: "1055811771864",
+      appId: "1:1055811771864:web:0cc9fbda6482b7397166ad",
+      measurementId: "G-BQ0ZL1T7R",
+      databaseURL: "https://website-sekolah-dde65-default-rtdb.firebaseio.com"
+    };
+
+    // Inisialisasi Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const aspirasiRef = ref(db, 'aspirasi');
+
+    // 1. FUNGSI KIRIM DATA
+    const formAspirasi = document.getElementById('formAspirasi');
+    if (formAspirasi) {
+      formAspirasi.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const nama = document.getElementById('nama').value;
+        const email = document.getElementById('email').value;
+        const pesan = document.getElementById('pesan').value;
+        const btnKirim = document.getElementById('btnKirim');
+
+        btnKirim.innerText = 'Mengirim...';
+        btnKirim.disabled = true;
+
+        push(aspirasiRef, {
+          nama: nama,
+          email: email,
+          pesan: pesan,
+          waktu: Date.now()
+        }).then(() => {
+          alert('Aspirasi berhasil dikirim!');
+          formAspirasi.reset();
+        }).catch((err) => {
+          alert("Gagal mengirim aspirasi: " + err.message);
+        }).finally(() => {
+          btnKirim.innerText = 'Kirim Aspirasi';
+          btnKirim.disabled = false;
+        });
+      });
+    }
+
+    // 2. FUNGSI BACA DATA REAL-TIME
+    onValue(aspirasiRef, (snapshot) => {
+      const data = snapshot.val();
+      const container = document.getElementById('aspirasiContainer');
+      
+      if (!container) return;
+      container.innerHTML = '';
+
+      if (data) {
+        const list = Object.values(data).reverse();
+        list.forEach(item => {
+          container.innerHTML += `
+            <div class="aspirasi-item" style="background: rgba(255,255,255,0.08); padding: 12px; margin-bottom: 12px; border-radius: 8px; border-left: 4px solid #00d2ff;">
+              <h4 style="margin: 0 0 4px 0; color: #fff;">${item.nama}</h4>
+              <p style="margin: 0; color: #ddd; font-size: 14px; line-height: 1.4;">${item.pesan}</p>
+            </div>
+          `;
+        });
+      } else {
+        container.innerHTML = '<p style="color: #aaa;">Belum ada aspirasi terkirim.</p>';
+      }
+    });
+  </script>
+
+  <!-- JS Terpisah -->
+  <script src="script.js"></script>
+</body>
+</html>
