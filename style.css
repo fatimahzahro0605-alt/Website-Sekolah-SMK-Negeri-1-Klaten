@@ -2946,12 +2946,14 @@ body::-webkit-scrollbar {
 }
 
 /* UNTUK LAYAR HP */
-/* ALL-IN-ONE RESPONSIVE MOBILE FIX (HP) */
+/* ==========================================================================
+   ALL-IN-ONE RESPONSIVE MOBILE FIX (HP) - OPTIMIZED
+   ========================================================================== */
 @media (max-width: 768px) {
 
   /* 1. LAYOUT GLOBAL & PADDING BODY */
   body {
-    padding-top: 110px !important; /* Mencegah judul ketutupan navbar */
+    padding-top: 110px !important;
     overflow-x: hidden !important;
   }
 
@@ -2960,7 +2962,7 @@ body::-webkit-scrollbar {
     height: auto !important;
   }
 
-  /* 2. NAVBAR 2 BARIS (Baris 1: Logo + Judul, Baris 2: Menu Navigasi) */
+  /* 2. NAVBAR 2 BARIS & TOMBOL CARI DI SAMPING KONTAK */
   header, nav, .navbar {
     position: fixed !important;
     top: 0 !important;
@@ -2975,7 +2977,6 @@ body::-webkit-scrollbar {
     box-sizing: border-box !important;
   }
 
-  /* Baris 1 Navbar: Logo & Judul SMK Sebaris */
   .logo, .navbar-brand {
     display: flex !important;
     flex-direction: row !important;
@@ -2997,7 +2998,7 @@ body::-webkit-scrollbar {
     white-space: nowrap !important;
   }
 
-  /* Baris 2 Navbar: Beranda dll (Bisa Digeser 1 Baris) */
+  /* Navigasi Horizontal Scroll */
   .nav-links, .navbar-nav, .menu, .menu-list, ul.nav-list, ul {
     display: flex !important;
     flex-direction: row !important;
@@ -3006,7 +3007,7 @@ body::-webkit-scrollbar {
     width: 100% !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
-    gap: 12px !important;
+    gap: 10px !important;
     padding: 2px 0 !important;
     margin: 0 !important;
     list-style: none !important;
@@ -3019,146 +3020,182 @@ body::-webkit-scrollbar {
   }
 
   .nav-links a, .navbar-nav a, .menu a, ul a {
-    font-size: 12px !important;
+    font-size: 11px !important;
     padding: 4px 6px !important;
     white-space: nowrap !important;
     flex-shrink: 0 !important;
   }
 
+  /* Menyembunyikan Input Search Bawaan & Menyisakan 1 Tombol Cari saja */
+  .search-box input, .search-form input, .navbar .search-input {
+    display: none !important;
+  }
+
+  .search-box, .search-btn, .btn-search, .search-container {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 2px 6px !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .search-btn button, .search-box button {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 12px !important;
+    cursor: pointer !important;
+  }
+
   /* 3. HERO SECTION */
-  /* Ukuran "Selamat Datang di" & "Unggul, Berkarya..." Disamakan & BOLD */
   .hero h2, .welcome-text,
   .hero h3, .hero-subtitle, .yellow-text {
-    font-size: 16px !important;
+    font-size: 14px !important;
     font-weight: 700 !important;
     line-height: 1.3 !important;
     margin: 4px 0 !important;
   }
 
-  /* "SMK NEGERI 1 KLATEN" Paling Utama & Besar */
   .hero h1, .hero-title {
-    font-size: 24px !important;
+    font-size: 20px !important;
     font-weight: 800 !important;
     line-height: 1.2 !important;
     margin: 6px 0 !important;
   }
 
-  /* 4. UKURAN JUDUL SECTION (BESAR & BOLD) */
+  /* 4. JUDUL SECTION */
   .section-title, 
   section h2, 
   main h2, 
   .keunggulan-title, 
   .about-section h2 {
-    font-size: 24px !important;
+    font-size: 20px !important;
     font-weight: 800 !important;
     line-height: 1.25 !important;
-    margin-top: 20px !important;
-    margin-bottom: 10px !important;
+    margin-top: 16px !important;
+    margin-bottom: 8px !important;
   }
 
-  /* Judul Galeri Foto di Beranda Dibuat ke Tengah */
   .galeri-section h2, .gallery-title, #galeri h2 {
     text-align: center !important;
     width: 100% !important;
   }
 
-  /* 5. FIX STATISTIK (Siswa, Guru, Program, Prestasi Disusun 1-1 ke Bawah) */
-  .stats-container, .statistics-grid, .stats-wrapper {
+  /* 5. GRID KOTAK 2 KOLOM (1 LAYAR MUAT 2 KOTAK) */
+  .stats-container, .statistics-grid, .stats-wrapper,
+  .keunggulan-container, .services-grid, .card-container,
+  .jurusan-grid, .fasilitas-grid, .news-grid, .gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Menerapkan 2 kolom */
+    gap: 8px !important; /* Jarak antar kotak diperkecil */
+    width: 100% !important;
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ukuran Kotak Dikecilkan Tanpa Perlu Tambah Height */
+  .stats-card, .stat-card,
+  .keunggulan-card, .card,
+  .jurusan-card, .fasilitas-card, .news-card {
+    width: 100% !important;
+    height: auto !important;
+    padding: 8px !important;
+    box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 12px !important;
-    width: 100% !important;
-    padding: 0 15px !important;
-    box-sizing: border-box !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important; /* Menjaga elemen tidak keluar kotak */
   }
 
-  .stats-card, .stat-card {
+  /* 6. GAMBAR DALAM KOTAK & JARAK TEKS */
+  .jurusan-card img, .card-img, .jurusan-img,
+  .fasilitas-card img, .news-card img, .card img {
     width: 100% !important;
-    padding: 12px 15px !important;
-    box-sizing: border-box !important;
+    height: 100px !important; /* Gambar dikecilkan proporsional */
+    object-fit: cover !important;
+    border-radius: 6px !important;
+    margin-bottom: 4px !important; /* Jarak gambar ke teks diperdekat */
   }
 
-  /* 6. FIX TENTANG KAMI (JARAK GAMBAR KE TEKS RAPAT) */
+  .card h3, .stat-card h3, .keunggulan-card h3, .jurusan-card h3 {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    margin: 2px 0 !important;
+    line-height: 1.2 !important;
+  }
+
+  .card p, .stat-card p, .keunggulan-card p, .jurusan-card p {
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+    margin-top: 2px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* 7. CEGAH EMAIL & TEKS PANJANG MELEWATI FRAME (TRUNCATE AUTO) */
+  .email-text, a[href^="mailto:"], .contact-info p, .card p, .footer-content p {
+    font-size: 10px !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+    white-space: normal !important;
+    text-overflow: ellipsis !important;
+    max-width: 100% !important;
+  }
+
+  /* 8. ABOUT SECTION (TENTANG KAMI) */
   .about-section, #about {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
   }
 
   .about-container, .about-wrapper {
     display: flex !important;
     flex-direction: column !important;
-    gap: 8px !important;
-    padding: 0 15px !important;
+    gap: 6px !important;
+    padding: 0 10px !important;
   }
 
   .about-img, .about-image, .about-section img {
     width: 100% !important;
     height: auto !important;
-    max-height: 220px !important;
+    max-height: 160px !important;
     object-fit: cover !important;
-    margin-bottom: 0 !important;
+    margin-bottom: 2px !important;
   }
 
   .about-text, .about-description, .about-text p {
-    margin-top: 4px !important;
+    margin-top: 2px !important;
     padding-top: 0 !important;
+    font-size: 11px !important;
   }
 
-  /* 7. FIX KEUNGGULAN (KOTAK DISUSUN 1 PER 1 KE BAWAH) */
-  .keunggulan-container, .services-grid, .card-container {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 14px !important;
-    width: 100% !important;
-    padding: 0 15px !important;
-    box-sizing: border-box !important;
-  }
-
-  .keunggulan-card, .card {
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .card h3, .stat-card h3, .keunggulan-card h3 {
-    font-size: 16px !important;
-    font-weight: 800 !important;
-    margin: 6px 0 !important;
-  }
-
-  /* 8. FIX GAMBAR JURUSAN (PAS MASUK FRAME TANPA SISA) */
-  .jurusan-card img, .card-img, .jurusan-img {
-    width: 100% !important;
-    height: 180px !important;
-    object-fit: cover !important;
-    border-radius: 8px !important;
-  }
-
-  /* 9. KEPEMIMPINAN SEKOLAH & FOOTER (TAMPILAN DISUSUN KE BAWAH) */
+  /* 9. KEPEMIMPINAN & FOOTER */
   .kepemimpinan-container, .leadership-grid,
   footer, .footer-container, .footer-content {
     display: flex !important;
     flex-direction: column !important;
-    gap: 15px !important;
+    gap: 10px !important;
     width: 100% !important;
+    padding: 10px !important;
     box-sizing: border-box !important;
   }
 
-  /* 10. SOSIAL MEDIA & ASPIRASI DIKECILKAN KUSUS HP */
+  /* 10. SOSIAL MEDIA & FORM ASPIRASI */
   .social-media, .social-links, .sosmed-section {
-    font-size: 12px !important;
-    transform: scale(0.9) !important;
+    font-size: 11px !important;
+    transform: scale(0.85) !important;
     transform-origin: center !important;
   }
 
   .aspirasi-section, .form-aspirasi, #aspirasi {
-    padding: 10px 15px !important;
-    font-size: 13px !important;
+    padding: 8px 10px !important;
+    font-size: 11px !important;
   }
 
   .aspirasi-section input, 
   .aspirasi-section textarea, 
   .aspirasi-section button {
-    font-size: 12px !important;
-    padding: 8px 10px !important;
+    font-size: 10px !important;
+    padding: 6px 8px !important;
   }
 }
