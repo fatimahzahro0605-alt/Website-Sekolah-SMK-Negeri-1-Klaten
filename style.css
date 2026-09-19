@@ -2946,12 +2946,14 @@ body::-webkit-scrollbar {
 }
 
 /* UNTUK LAYAR HP */
-/* ALL-IN-ONE RESPONSIVE MOBILE FIX (HP) */
+/* ==========================================
+   RESPONSIVE MOBILE FIX (HP)
+   ========================================== */
 @media (max-width: 768px) {
 
   /* 1. LAYOUT GLOBAL & PADDING BODY */
   body {
-    padding-top: 110px !important; /* Mencegah judul ketutupan navbar */
+    padding-top: 100px !important; /* Jarak aman agar konten tidak tertutup navbar */
     overflow-x: hidden !important;
   }
 
@@ -2960,8 +2962,8 @@ body::-webkit-scrollbar {
     height: auto !important;
   }
 
-  /* 2. NAVBAR 2 BARIS (Baris 1: Logo + Judul, Baris 2: Menu Navigasi) */
-  header, nav, .navbar {
+  /* 2. NAVBAR RESPONSIVE (2 BARIS) */
+  .navbar {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -2973,10 +2975,11 @@ body::-webkit-scrollbar {
     padding: 8px 12px !important;
     gap: 6px !important;
     box-sizing: border-box !important;
+    background-color: #111827; /* Sesuaikan dengan warna tema web */
   }
 
-  /* Baris 1 Navbar: Logo & Judul SMK Sebaris */
-  .logo, .navbar-brand {
+  /* Baris 1: Logo & Judul Sekolah */
+  .logo-container {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
@@ -2984,21 +2987,31 @@ body::-webkit-scrollbar {
     width: 100% !important;
   }
 
-  .logo img, .navbar-brand img {
-    height: 28px !important;
+  .logo-img {
+    height: 30px !important;
     width: auto !important;
   }
 
-  .logo h1, .navbar-brand h1 {
-    display: block !important;
-    font-size: 14px !important;
+  .brand-text {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .brand-title {
+    font-size: 13px !important;
     font-weight: 700 !important;
-    margin: 0 !important;
+    line-height: 1.2 !important;
     white-space: nowrap !important;
   }
 
-  /* Baris 2 Navbar: Beranda dll (Bisa Digeser 1 Baris) */
-  .nav-links, .navbar-nav, .menu, .menu-list, ul.nav-list, ul {
+  .brand-tagline {
+    font-size: 9px !important;
+    opacity: 0.8;
+    white-space: nowrap !important;
+  }
+
+  /* Baris 2: Menu Navigasi (Bisa Di-scroll Menyamping) */
+  .nav-menu {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
@@ -3006,126 +3019,121 @@ body::-webkit-scrollbar {
     width: 100% !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
-    gap: 12px !important;
-    padding: 2px 0 !important;
+    gap: 10px !important;
+    padding: 4px 0 !important;
     margin: 0 !important;
     list-style: none !important;
     white-space: nowrap !important;
     -webkit-overflow-scrolling: touch !important;
   }
 
-  .nav-links::-webkit-scrollbar, ul::-webkit-scrollbar {
-    display: none !important;
+  .nav-menu::-webkit-scrollbar {
+    display: none !important; /* Sembunyikan scrollbar agar rapi */
   }
 
-  .nav-links a, .navbar-nav a, .menu a, ul a {
-    font-size: 12px !important;
-    padding: 4px 6px !important;
-    white-space: nowrap !important;
+  .nav-menu li {
     flex-shrink: 0 !important;
   }
 
+  .nav-menu a {
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+    white-space: nowrap !important;
+  }
+
+  .search-box {
+    display: none !important; /* Sembunyikan kotak cari di HP agar tidak sempit */
+  }
+
   /* 3. HERO SECTION */
-  /* Ukuran "Selamat Datang di" & "Unggul, Berkarya..." Disamakan & BOLD */
   .hero h2, .welcome-text,
   .hero h3, .hero-subtitle, .yellow-text {
-    font-size: 16px !important;
+    font-size: 15px !important;
     font-weight: 700 !important;
     line-height: 1.3 !important;
     margin: 4px 0 !important;
   }
 
-  /* "SMK NEGERI 1 KLATEN" Paling Utama & Besar */
   .hero h1, .hero-title {
-    font-size: 24px !important;
+    font-size: 22px !important;
     font-weight: 800 !important;
     line-height: 1.2 !important;
     margin: 6px 0 !important;
   }
 
-  /* 4. UKURAN JUDUL SECTION (BESAR & BOLD) */
+  /* 4. JUDUL SECTION */
   .section-title, 
+  .aspirasi-title,
   section h2, 
   main h2, 
   .keunggulan-title, 
   .about-section h2 {
-    font-size: 24px !important;
+    font-size: 22px !important;
     font-weight: 800 !important;
     line-height: 1.25 !important;
-    margin-top: 20px !important;
+    margin-top: 15px !important;
     margin-bottom: 10px !important;
-  }
-
-  /* Judul Galeri Foto di Beranda Dibuat ke Tengah */
-  .galeri-section h2, .gallery-title, #galeri h2 {
     text-align: center !important;
-    width: 100% !important;
   }
 
-  /* 5. FIX STATISTIK (Siswa, Guru, Program, Prestasi Disusun 1-1 ke Bawah) */
-  .stats-container, .statistics-grid, .stats-wrapper {
+  /* 5. KONTAK & ASPIRASI (DISUSUN 1 KOLOM KE BAWAH) */
+  .contact-wrapper,
+  .aspirasi-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: 100% !important;
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  .contact-info-list, 
+  .map-container,
+  .aspirasi-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .map-container iframe {
+    height: 250px !important; /* Penyesuaian tinggi peta di HP */
+  }
+
+  /* Form & Tampilan Aspirasi */
+  .aspirasi-section {
+    padding: 20px 10px !important;
+  }
+
+  .aspirasi-card form .input-group input,
+  .aspirasi-card form .input-group textarea {
+    width: 100% !important;
+    font-size: 14px !important; /* Ukuran pas agar nyaman diketik di HP */
+    box-sizing: border-box !important;
+  }
+
+  .btn-kirim {
+    width: 100% !important;
+    padding: 12px !important;
+    font-size: 14px !important;
+  }
+
+  /* 6. STATISTIK & KEUNGGULAN (GRID KE BAWAH) */
+  .stats-container, .statistics-grid, .stats-wrapper,
+  .keunggulan-container, .services-grid, .card-container {
     display: flex !important;
     flex-direction: column !important;
     gap: 12px !important;
     width: 100% !important;
-    padding: 0 15px !important;
+    padding: 0 10px !important;
     box-sizing: border-box !important;
   }
 
-  .stats-card, .stat-card {
-    width: 100% !important;
-    padding: 12px 15px !important;
-    box-sizing: border-box !important;
-  }
-
-  /* 6. FIX TENTANG KAMI (JARAK GAMBAR KE TEKS RAPAT) */
-  .about-section, #about {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-  }
-
-  .about-container, .about-wrapper {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-    padding: 0 15px !important;
-  }
-
-  .about-img, .about-image, .about-section img {
-    width: 100% !important;
-    height: auto !important;
-    max-height: 220px !important;
-    object-fit: cover !important;
-    margin-bottom: 0 !important;
-  }
-
-  .about-text, .about-description, .about-text p {
-    margin-top: 4px !important;
-    padding-top: 0 !important;
-  }
-
-  /* 7. FIX KEUNGGULAN (KOTAK DISUSUN 1 PER 1 KE BAWAH) */
-  .keunggulan-container, .services-grid, .card-container {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 14px !important;
-    width: 100% !important;
-    padding: 0 15px !important;
-    box-sizing: border-box !important;
-  }
-
-  .keunggulan-card, .card {
+  .stats-card, .stat-card, .keunggulan-card, .card {
     width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  .card h3, .stat-card h3, .keunggulan-card h3 {
-    font-size: 16px !important;
-    font-weight: 800 !important;
-    margin: 6px 0 !important;
-  }
-
-  /* 8. FIX GAMBAR JURUSAN (PAS MASUK FRAME TANPA SISA) */
+  /* 7. GAMBAR RESPONSIVE */
+  .about-img, .about-image, .about-section img,
   .jurusan-card img, .card-img, .jurusan-img {
     width: 100% !important;
     height: 180px !important;
@@ -3133,32 +3141,16 @@ body::-webkit-scrollbar {
     border-radius: 8px !important;
   }
 
-  /* 9. KEPEMIMPINAN SEKOLAH & FOOTER (TAMPILAN DISUSUN KE BAWAH) */
-  .kepemimpinan-container, .leadership-grid,
+  /* 8. FOOTER RESPONSIVE */
   footer, .footer-container, .footer-content {
     display: flex !important;
     flex-direction: column !important;
-    gap: 15px !important;
-    width: 100% !important;
+    gap: 20px !important;
+    padding: 20px 15px !important;
     box-sizing: border-box !important;
   }
 
-  /* 10. SOSIAL MEDIA & ASPIRASI DIKECILKAN KUSUS HP */
-  .social-media, .social-links, .sosmed-section {
-    font-size: 12px !important;
-    transform: scale(0.9) !important;
-    transform-origin: center !important;
-  }
-
-  .aspirasi-section, .form-aspirasi, #aspirasi {
-    padding: 10px 15px !important;
-    font-size: 13px !important;
-  }
-
-  .aspirasi-section input, 
-  .aspirasi-section textarea, 
-  .aspirasi-section button {
-    font-size: 12px !important;
-    padding: 8px 10px !important;
+  .footer-col {
+    width: 100% !important;
   }
 }
