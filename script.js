@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return "A";
   }
 
-  // 2. Fungsi nampilin item ke HTML (ditambahkan parameter email & avatar inisial)
+  // 2. Fungsi nampilin item ke HTML dengan desain UI milikmu
   function tampilkanAspirasiKeUI(nama, email, tanggal, pesan) {
     const itemBaru = document.createElement('div');
     itemBaru.classList.add('aspirasi-item');
@@ -281,51 +281,6 @@ document.addEventListener('DOMContentLoaded', () => {
     aspirasiContainer.prepend(itemBaru);
   }
 
-  // 3. Load data tersimpan saat web dibuka/refresh
-  function muatAspirasiTersimpan() {
-    const dataTersimpan = JSON.parse(localStorage.getItem('daftarAspirasi')) || [];
-    aspirasiContainer.innerHTML = '';
-
-    dataTersimpan.forEach(item => {
-      tampilkanAspirasiKeUI(item.nama, item.email, item.tanggal, item.pesan);
-    });
-  }
-
-  // 4. Event handler saat form dikirim
-  formAspirasi.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    // Ambil Nilai Input (termasuk email)
-    const namaInput = document.getElementById('nama').value.trim();
-    const emailInput = document.getElementById('email').value.trim();
-    const pesanInput = document.getElementById('pesan').value.trim();
-
-    // Logika nama jika kosong / diisi
-    const namaTampil = namaInput !== "" ? namaInput : "Anonim";
-
-    // Format Tanggal Otomatis
-    const hariIni = new Date();
-    const opsiTanggal = { day: 'numeric', month: 'long', year: 'numeric' };
-    const tanggalTampil = hariIni.toLocaleDateString('id-ID', opsiTanggal);
-
-    // Tampilkan di UI
-    tampilkanAspirasiKeUI(namaTampil, emailInput, tanggalTampil, pesanInput);
-
-    // Simpan ke localStorage (termasuk email)
-    const dataTersimpan = JSON.parse(localStorage.getItem('daftarAspirasi')) || [];
-    dataTersimpan.push({
-      nama: namaTampil,
-      email: emailInput,
-      tanggal: tanggalTampil,
-      pesan: pesanInput
-    });
-    localStorage.setItem('daftarAspirasi', JSON.stringify(dataTersimpan));
-
-    // Reset isi Form & Scroll ke atas
-    formAspirasi.reset();
-    aspirasiContainer.scrollTop = 0;
-  });
-
-  // Jalankan pembacaan data tersimpan
-  muatAspirasiTersimpan();
+  // Ekspor fungsi ini ke window agar bisa dipanggil oleh script Firebase di HTML
+  window.tampilkanAspirasiKeUI = tampilkanAspirasiKeUI;
 });
