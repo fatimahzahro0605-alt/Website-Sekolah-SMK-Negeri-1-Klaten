@@ -3056,9 +3056,9 @@ body::-webkit-scrollbar {
   }
 
   .hero h1, .hero-title {
-    font-size: 22px !important;
+    font-size: 10px !important;
     font-weight: 800 !important;
-    line-height: 1.2 !important;
+    line-height: 1 !important;
     margin: 6px 0 !important;
   }
 
@@ -3128,11 +3128,11 @@ body::-webkit-scrollbar {
 
   .stats-card, .stat-card, div[class*="stat"] > div {
     flex: 1 !important;
-    width: 23% !important;
-    max-width: 24% !important;
+    width: 20% !important;
+    max-width: 25% !important;
     min-width: 0 !important;
-    height: auto !important;
-    padding: 6px 2px !important;
+    height: 50px!important;
+    padding: 4px 2px !important;
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
