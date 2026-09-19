@@ -2947,13 +2947,13 @@ body::-webkit-scrollbar {
 
 /* UNTUK LAYAR HP */
 /* ==========================================================================
-   PERBAIKAN CSS MOBILE (HP) - SESUAI INSTRUKSI
+   PERBAIKAN CSS MOBILE (HP) - PRESISI SESUAI INSTRUKSI
    ========================================================================== */
 @media (max-width: 768px) {
 
-  /* 1. LAYOUT GLOBAL & HILANGKAN AREA PUTIH DI ATAS */
+  /* 1. LAYOUT GLOBAL & NAVBAR */
   body {
-    padding-top: 65px !important; /* Pas di bawah navbar, menghilangkan area putih melayang */
+    padding-top: 65px !important;
     overflow-x: hidden !important;
   }
 
@@ -2962,7 +2962,6 @@ body::-webkit-scrollbar {
     height: auto !important;
   }
 
-  /* 2. NAVBAR & TOMBOL CARI DI SAMPING KONTAK */
   header, nav, .navbar {
     position: fixed !important;
     top: 0 !important;
@@ -2998,7 +2997,7 @@ body::-webkit-scrollbar {
     white-space: nowrap !important;
   }
 
-  /* Menu Navigasi Horizontal */
+  /* Navigasi Horizontal */
   .nav-links, .navbar-nav, .menu, .menu-list, ul.nav-list, ul {
     display: flex !important;
     flex-direction: row !important;
@@ -3026,7 +3025,7 @@ body::-webkit-scrollbar {
     flex-shrink: 0 !important;
   }
 
-  /* Menampilkan Kembali Tombol Cari di Samping Kontak */
+  /* Tombol Cari Ringkas di Samping Menu Kontak */
   .search-box, .search-form, .search-container {
     display: flex !important;
     align-items: center !important;
@@ -3036,7 +3035,7 @@ body::-webkit-scrollbar {
 
   .search-box input, .search-form input {
     display: inline-block !important;
-    width: 80px !important; /* Ukuran input ringkas agar cukup di baris menu */
+    width: 70px !important;
     font-size: 11px !important;
     padding: 2px 6px !important;
   }
@@ -3045,11 +3044,11 @@ body::-webkit-scrollbar {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 4px 8px !important;
+    padding: 4px 6px !important;
     font-size: 12px !important;
   }
 
-  /* 3. HERO SECTION */
+  /* 2. HERO & JUDUL SECTION (DIAPLIKASIKAN AWAL) */
   .hero h2, .welcome-text,
   .hero h3, .hero-subtitle, .yellow-text {
     font-size: 15px !important;
@@ -3065,16 +3064,11 @@ body::-webkit-scrollbar {
     margin: 6px 0 !important;
   }
 
-  /* 4. JUDUL SECTION */
-  .section-title, 
-  section h2, 
-  main h2, 
-  .keunggulan-title, 
-  .about-section h2 {
-    font-size: 22px !important;
+  .section-title, section h2, main h2, .keunggulan-title, .about-section h2 {
+    font-size: 20px !important;
     font-weight: 800 !important;
     line-height: 1.25 !important;
-    margin-top: 18px !important;
+    margin-top: 16px !important;
     margin-bottom: 8px !important;
   }
 
@@ -3083,8 +3077,52 @@ body::-webkit-scrollbar {
     width: 100% !important;
   }
 
-  /* 5. FIX STATISTIK (2 KOLOM, TEKS & ANGKA MENYESUAIKAN AGAR TDK TERPOTONG) */
+  /* 3. FIX STATISTIK (4 KARTU BERJEJER KE SAMPING, RASIO 5:3) */
   .stats-container, .statistics-grid, .stats-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 4px !important;
+    width: 100% !important;
+    padding: 0 6px !important;
+    box-sizing: border-box !important;
+  }
+
+  .stats-card, .stat-card {
+    width: 100% !important;
+    aspect-ratio: 5 / 3 !important;
+    padding: 4px 2px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    overflow: hidden !important;
+  }
+
+  .stats-card img, .stat-card img, .stats-card i {
+    height: 12px !important;
+    width: auto !important;
+    margin-bottom: 2px !important;
+  }
+
+  .stats-card h3, .stat-card h3, .stats-card .number {
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    margin: 1px 0 !important;
+    white-space: nowrap !important;
+  }
+
+  .stats-card p, .stat-card p {
+    font-size: 7.5px !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* 4. FIX KARTU KEUNGGULAN (2 KOLOM PAS 1 LAYAR) */
+  .keunggulan-container, .services-grid, .card-container, .feature-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 8px !important;
@@ -3093,78 +3131,81 @@ body::-webkit-scrollbar {
     box-sizing: border-box !important;
   }
 
-  .stats-card, .stat-card {
+  .keunggulan-card, .feature-card, .services-grid .card {
     width: 100% !important;
-    padding: 8px 6px !important;
+    padding: 12px 8px !important;
     box-sizing: border-box !important;
-    text-align: center !important;
-    word-break: break-word !important; /* Mencegah angka/teks meluap keluar kotak */
-  }
-
-  .stats-card h3, .stat-card h3, .stats-card .number {
-    font-size: 16px !important;
-    font-weight: 800 !important;
-    margin: 2px 0 !important;
-  }
-
-  .stats-card p, .stat-card p {
-    font-size: 11px !important;
-    margin: 0 !important;
-  }
-
-  /* 6. GALERI, INFORMASI KEGIATAN, KEPEMIMPINAN, JURUSAN, FASILITAS (1 BARIS 1 FOTO) */
-  .keunggulan-container, .services-grid, .card-container,
-  .jurusan-grid, .fasilitas-grid, .news-grid, .gallery-grid, .kepemimpinan-container, .leadership-grid {
     display: flex !important;
-    flex-direction: column !important; /* Kembali ke 1 baris 1 foto/kartu */
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    border-radius: 12px !important;
+  }
+
+  .keunggulan-card img, .feature-card img, .services-grid .card img,
+  .keunggulan-card i, .feature-card i {
+    width: 42px !important;
+    height: 42px !important;
+    object-fit: contain !important;
+    margin-bottom: 6px !important;
+  }
+
+  .keunggulan-card h3, .feature-card h3, .services-grid .card h3 {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    white-space: normal !important;
+  }
+
+  /* 5. FIX GALERI, INFORMASI KEGIATAN, JURUSAN, FASILITAS (1 KOLOM PAS FRAME) */
+  .jurusan-grid, .fasilitas-grid, .news-grid, .gallery-grid, .kegiatan-grid, .kepemimpinan-container, .leadership-grid {
+    display: flex !important;
+    flex-direction: column !important;
     gap: 12px !important;
     width: 100% !important;
     padding: 0 12px !important;
     box-sizing: border-box !important;
   }
 
-  .keunggulan-card, .card,
-  .jurusan-card, .fasilitas-card, .news-card, .gallery-card, .leader-card {
-    width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 10px !important;
-  }
-
-  /* Gambar Menyesuaikan Kotak Tanpa Terpotong/Meluap */
-  .jurusan-card img, .card-img, .jurusan-img,
-  .fasilitas-card img, .news-card img, .gallery-card img, .card img {
+  .jurusan-card, .fasilitas-card, .news-card, .gallery-card, .kegiatan-card, .leader-card {
     width: 100% !important;
     height: auto !important;
-    max-height: 180px !important;
+    min-height: 0 !important;
+    padding: 8px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+
+  .jurusan-card img, .fasilitas-card img, .news-card img, .gallery-card img, .kegiatan-card img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 220px !important;
     object-fit: cover !important;
-    border-radius: 6px !important;
-    margin-bottom: 6px !important;
+    border-radius: 10px !important;
+    margin: 0 !important;
+    display: block !important;
   }
 
-  /* Jarak Gambar dan Penjelasan Diperdekat */
-  .card h3, .keunggulan-card h3, .jurusan-card h3, .news-card h3 {
-    font-size: 14px !important;
+  .jurusan-card h3, .fasilitas-card h3, .news-card h3, .gallery-card h3, .kegiatan-card h3 {
+    font-size: 13px !important;
     font-weight: 700 !important;
-    margin: 2px 0 !important;
+    margin: 4px 0 2px 0 !important;
   }
 
-  .card p, .keunggulan-card p, .jurusan-card p, .news-card p {
-    font-size: 12px !important;
-    line-height: 1.3 !important;
-    margin-top: 2px !important;
-  }
-
-  /* Proteksi Teks Panjang/Email Agar Menyesuaikan Ukuran Kotak */
-  .email-text, a[href^="mailto:"], .contact-info p {
+  .jurusan-card p, .fasilitas-card p, .news-card p, .gallery-card p, .kegiatan-card p {
     font-size: 11px !important;
-    word-break: break-all !important;
-    overflow-wrap: anywhere !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
   }
 
-  /* 7. ABOUT SECTION (TENTANG KAMI) */
+  /* 6. ABOUT SECTION */
   .about-section, #about {
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
+    padding: 8px 0 !important;
   }
 
   .about-container, .about-wrapper {
@@ -3177,7 +3218,7 @@ body::-webkit-scrollbar {
   .about-img, .about-image, .about-section img {
     width: 100% !important;
     height: auto !important;
-    max-height: 200px !important;
+    max-height: 180px !important;
     object-fit: cover !important;
     margin-bottom: 2px !important;
   }
@@ -3185,34 +3226,95 @@ body::-webkit-scrollbar {
   .about-text, .about-description, .about-text p {
     margin-top: 2px !important;
     padding-top: 0 !important;
-    font-size: 12px !important;
+    font-size: 11px !important;
   }
 
-  /* 8. FOOTER KEMBALI SEPERTI RACIKAN AWAL KAMU */
-  footer, .footer-container, .footer-content {
+  /* 7. FOOTER, KOTAK KONTAK & SOSMED (SUSUNAN KEBAWAH, KECIL RINGKAS) */
+  footer, .footer-container, .footer-content, .contact-section, .contact-container {
     display: flex !important;
-    flex-direction: column !important;
-    gap: 15px !important;
+    flex-direction: column !important; /* Kembali susunan penuh ke bawah */
+    gap: 10px !important;
     width: 100% !important;
+    padding: 10px 12px !important;
     box-sizing: border-box !important;
   }
 
-  /* 9. SOSIAL MEDIA & FORM ASPIRASI AWAL */
-  .social-media, .social-links, .sosmed-section {
-    font-size: 12px !important;
-    transform: scale(0.9) !important;
-    transform-origin: center !important;
+  .contact-card, .footer-card, .contact-info, .info-box {
+    width: 100% !important;
+    height: auto !important;
+    padding: 10px 12px !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
   }
 
-  .aspirasi-section, .form-aspirasi, #aspirasi {
-    padding: 10px 15px !important;
+  .contact-card h3, .footer-card h3, .contact-info h3 {
     font-size: 13px !important;
+    font-weight: 700 !important;
+    margin: 0 0 4px 0 !important;
+  }
+
+  .contact-card p, .footer-card p, .contact-info p {
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
+  }
+
+  /* Penanganan Teks Email Agar Terpotong Rapi dan Tidak Keluar Frame */
+  .contact-card a, .email-text, a[href^="mailto:"] {
+    font-size: 10.5px !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+    display: inline-block !important;
+    max-width: 100% !important;
+  }
+
+  .contact-card img, .contact-info img, .contact-card i {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  /* Tombol Sosial Media Ber-rasio 3:4 */
+  .social-media, .social-links, .sosmed-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-top: 6px !important;
+    width: 100% !important;
+  }
+
+  .social-media a, .social-links a, .sosmed-icon {
+    width: 30px !important;
+    height: 40px !important;
+    aspect-ratio: 3 / 4 !important;
+    border-radius: 8px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .social-media img, .social-links img, .social-media i {
+    width: 16px !important;
+    height: 16px !important;
+    object-fit: contain !important;
+  }
+
+  /* Form Aspirasi */
+  .aspirasi-section, .form-aspirasi, #aspirasi {
+    padding: 10px 12px !important;
+    font-size: 12px !important;
   }
 
   .aspirasi-section input, 
   .aspirasi-section textarea, 
   .aspirasi-section button {
-    font-size: 12px !important;
-    padding: 8px 10px !important;
+    font-size: 11px !important;
+    padding: 6px 8px !important;
   }
 }
