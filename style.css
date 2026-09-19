@@ -3049,14 +3049,14 @@ body::-webkit-scrollbar {
   /* 2. HERO & JUDUL SECTION */
   .hero h2, .welcome-text,
   .hero h3, .hero-subtitle, .yellow-text {
-    font-size: 15px !important;
+    font-size: 20px !important;
     font-weight: 700 !important;
     line-height: 1.3 !important;
     margin: 4px 0 !important;
   }
 
   .hero h1, .hero-title {
-    font-size: 25px !important;
+    font-size: 30px !important;
     font-weight: 800 !important;
     line-height: 1 !important;
     margin: 6px 0 !important;
@@ -3064,7 +3064,7 @@ body::-webkit-scrollbar {
 
   /* UBAH UKURAN TEKS "UNGGUL, BERKARYA..." DI SINI */
   .hero h3, .hero-subtitle, .yellow-text {
-    font-size: 11px !important; /* <-- UBAH ANGKA INI (Misal: 9px atau 10px biar pas) */
+    font-size: 7px !important; /* <-- UBAH ANGKA INI (Misal: 9px atau 10px biar pas) */
     font-weight: 700 !important;
     line-height: 1.3 !important;
     margin: 4px 0 !important;
@@ -3083,7 +3083,7 @@ body::-webkit-scrollbar {
   .hero-content p, 
   .hero-description, 
   .welcome-text + p {
-    font-size: 7px !important;       /* <-- UBAH ANGKA INI UNTUK UKURAN FONT */
+    font-size: 10px !important;       /* <-- UBAH ANGKA INI UNTUK UKURAN FONT */
     line-height: 1.35 !important;     /* Jarak antar baris biar gak terlalu renggang */
     max-width: 90% !important;        /* Lebar teks biar ga terlalu mepet pinggir */
     margin: 4px auto !important;      /* Bikin posisi teks pas di tengah */
@@ -3132,64 +3132,63 @@ body::-webkit-scrollbar {
     position: static !important;
   }
 
- /* 4. STATISTIK 1700 SISWA (PROPORSIONAL, TINGGI PAS, TIDAK KECIL) */
-  .stats-container, .statistics-grid, .stats-wrapper, div[class*="stat"] {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    justify-content: space-between !important;
-    align-items: stretch !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 4px !important;
-    box-sizing: border-box !important;
-    gap: 4px !important;
-  }
+ /* 4. STATISTIK 1700 SISWA (RASIO 3:4 MELEBAR KE KANAN & DI TENGAH) */
+.stats-container, .statistics-grid, .stats-wrapper, div[class*="stat"] {
+  display: flex !important;
+  flex-direction: column !important; /* Disusun berurut ke bawah */
+  align-items: center !important;     /* Bikin posisi seluruh kotak pas di tengah */
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 10px 0 !important;
+  box-sizing: border-box !important;
+  gap: 12px !important;               /* Jarak antar kartu */
+}
 
-  .stats-card, .stat-card, div[class*="stat"] > div {
-    flex: 1 !important;
-    width: 25% !important;
-    max-width: 25% !important;
-    min-width: 0 !important;
-    
-    /* UBAH DARI height: 50px JADI LEBIH TINGGI */
-    height: auto !important;
-    min-height: 75px !important; /* Ganti ke 80px/85px kalau mau tambah tinggi lagi */
-    
-    padding: 6px 3px !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-    overflow: hidden !important;
-    border-radius: 6px !important;
-  }
-  .stats-card img, .stat-card img, .stats-card i {
-    width: 20px !important;
-    height: 20px !important;
-    max-width: 20px !important;
-    max-height: 20px !important;
-    object-fit: contain !important;
-    margin-bottom: 2px !important;
-  }
+.stats-card, .stat-card, div[class*="stat"] > div {
+  width: 85% !important;              /* Lebar kotak di tengah layar */
+  max-width: 340px !important;        /* Batas lebar agar proporsional */
+  aspect-ratio: 4 / 3 !important;     /* Mengunci rasio kotak 3:4 (Lebar : Tinggi) */
+  height: auto !important;
+  min-width: 0 !important;
+  
+  padding: 16px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  border-radius: 12px !important;
+  margin: 0 auto !important;          /* Memastikan posisi rapi di tengah */
+}
 
-  .stats-card h3, .stat-card h3, .stats-card .number {
-    font-size: 10px !important;
-    font-weight: 800 !important;
-    line-height: 1.1 !important;
-    margin: 1px 0 !important;
-    white-space: nowrap !important;
-  }
+/* GAMBAR/IKON MENYESUAIKAN UKURAN KOTAK */
+.stats-card img, .stat-card img, .stats-card i, div[class*="stat"] img {
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  object-fit: contain !important;
+  margin-bottom: 8px !important;
+}
 
-  .stats-card p, .stat-card p {
-    font-size: 8px !important;
-    line-height: 1 !important;
-    margin: 0 !important;
-    white-space: nowrap !important;
-  }
+/* TEKS ANGKA STATISTIK MENYESUAIKAN */
+.stats-card h3, .stat-card h3, .stats-card .number, div[class*="stat"] h3 {
+  font-size: 18px !important;         /* Ukuran angka dibesarkan proporsional */
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  margin: 2px 0 !important;
+  white-space: nowrap !important;
+}
 
+/* TEKS DESKRIPSI MENYESUAIKAN */
+.stats-card p, .stat-card p, div[class*="stat"] p {
+  font-size: 12px !important;         /* Ukuran deskripsi dibesarkan proporsional */
+  line-height: 1.2 !important;
+  margin: 0 !important;
+  white-space: normal !important;
+}
+  
   /* 5. KEUNGGULAN (KARD DIKECILIN AGAR RINGKAS) */
   .keunggulan-container, .services-grid, .card-container, .feature-grid, div[class*="keunggulan"] {
     display: grid !important;
