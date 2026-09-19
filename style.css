@@ -3132,69 +3132,59 @@ body::-webkit-scrollbar {
     position: static !important;
   }
 
-/* 4. FIX STATISTIK (DITARUH MURNI DI BAWAH HERO, RAPI BERJEJER 4) */
+/* FIX TOTAL STATISTIK: DI TENGAH & MELEBAR KE KANAN 1 BANJAR KE BAWAH */
   .stats-container, .statistics-grid, .stats-wrapper, div[class*="stat"] {
     display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    justify-content: space-between !important;
-    align-items: stretch !important;
+    flex-direction: column !important; /* Susun berjejer ke bawah */
+    align-items: center !important;     /* Bikin di tengah layar */
     width: 100% !important;
     max-width: 100% !important;
-    padding: 0 4px !important;
+    padding: 12px 0 !important;
     box-sizing: border-box !important;
-    gap: 4px !important;
-    
-    /* PENTING: Bikin posisi murni turun di bawah tanpa menutupi teks */
+    gap: 8px !important;                /* Jarak antar kotak */
     position: relative !important;
-    top: auto !important;
-    margin-top: 16px !important; 
     clear: both !important;
   }
 
   .stats-card, .stat-card, div[class*="stat"] > div {
-    flex: 1 !important;
-    width: 25% !important;
-    max-width: 25% !important;
-    min-width: 0 !important;
-    aspect-ratio: auto !important; /* Hapus rasio kotak besar */
+    /* PENTING: PAKSA MELEBAR KE KANAN & DI TENGAH */
+    width: 90% !important;              /* Bikin kotak melebar memenuhi 90% layar */
+    min-width: 90% !important;
+    max-width: 90% !important;
     
     height: auto !important;
-    min-height: 65px !important;    /* Tinggi sedang biar pas dan proporsional */
-    
-    padding: 6px 2px !important;
+    min-height: 50px !important;         /* Tinggi ramping pas di HP */
+    padding: 8px 12px !important;
     box-sizing: border-box !important;
+    margin: 0 auto !important;          /* Paksa posisi rata tengah */
+    
     display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
+    flex-direction: row !important;     /* Ikon di kiri, teks di kanan */
     align-items: center !important;
-    text-align: center !important;
-    overflow: hidden !important;
-    border-radius: 6px !important;
-    margin: 0 !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    border-radius: 8px !important;
   }
 
   /* Ikon Statistik */
   .stats-card img, .stat-card img, .stats-card i, div[class*="stat"] img {
-    width: 20px !important;
-    height: 20px !important;
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
     object-fit: contain !important;
-    margin-bottom: 2px !important;
+    margin: 0 !important;
   }
 
-  /* Teks Angka (1.700+) */
+  /* Teks Angka (1.700+) & Deskripsi */
   .stats-card h3, .stat-card h3, .stats-card .number, div[class*="stat"] h3 {
-    font-size: 11px !important;
+    font-size: 14px !important;
     font-weight: 800 !important;
-    line-height: 1.1 !important;
-    margin: 1px 0 !important;
+    margin: 0 !important;
     white-space: nowrap !important;
   }
 
-  /* Teks Keterangan (Siswa) */
   .stats-card p, .stat-card p, div[class*="stat"] p {
-    font-size: 8.5px !important;
-    line-height: 1 !important;
+    font-size: 11px !important;
     margin: 0 !important;
     white-space: nowrap !important;
   }
